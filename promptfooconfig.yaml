@@ -11,7 +11,7 @@ providers:
   - file://./providers/dashscope-sg-qwen3.5-omni-flash.yaml
   - file://./providers/dashscope-sg-qwen3.5-omni-plus.yaml
   - file://./providers/dashscope-us-qwen3.5-flash.yaml
-  - file://./providers/openrouter-gemini-3-flash.yaml
+  # - file://./providers/openrouter-gemini-3-flash.yaml
   - file://./providers/seetacloud-xgd-qwen3.5.yaml
 
 tests:
