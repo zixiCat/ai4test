@@ -10,6 +10,7 @@ providers:
   - file://./providers/dashscope-sg.yaml
   - file://./providers/dashscope-us.yaml
   - file://./providers/seetacloud-xgd.yaml
+  - file://./providers/openrouter-gemini.yaml
 
 tests:
   - file://./tests/benchmark-cases.yaml
