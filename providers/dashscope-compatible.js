@@ -158,7 +158,7 @@ module.exports = class DashScopeCompatibleProvider {
       stream: true,
       max_tokens: this.config.max_tokens ?? DEFAULT_MAX_TOKENS,
       stream_options: { include_usage: true },
-      enable_thinking: true,
+      enable_thinking: !this.config.model.includes('omni') ? true : undefined,
     };
 
     if (typeof this.config.temperature === 'number') {
