@@ -1,14 +1,14 @@
 {
-  "evalId": "eval-j9Y-2026-04-28T07:10:50",
+  "evalId": "eval-IgU-2026-04-28T10:01:06",
   "results": {
     "version": 3,
-    "timestamp": "2026-04-28T07:10:50.056Z",
+    "timestamp": "2026-04-28T10:01:06.389Z",
     "prompts": [
       {
         "raw": "Write one plain sentence about {{topic}}.\nKeep it between 18 and 28 words.\nDo not use markdown, quotes, or a list.",
         "label": "prompts/ttft.txt: Write one plain sentence about {{topic}}.\nKeep it between 18 and 28 words.\nDo not use markdown, quotes, or a list.",
         "id": "e79a4da9821faa14c99ad2a9f2322f2a37f157ea325f3561670c1175bbefa7d3",
-        "provider": "qwen3.5-omni-plus singapore",
+        "provider": "qwen3.5-flash singapore",
         "metrics": {
           "score": 2,
           "testPassCount": 2,
@@ -16,12 +16,12 @@
           "testErrorCount": 0,
           "assertPassCount": 2,
           "assertFailCount": 0,
-          "totalLatencyMs": 2214,
+          "totalLatencyMs": 78279,
           "tokenUsage": {
-            "prompt": 93,
-            "completion": 48,
+            "prompt": 89,
+            "completion": 10105,
             "cached": 0,
-            "total": 141,
+            "total": 10194,
             "numRequests": 2,
             "completionDetails": {
               "reasoning": 0,
@@ -46,18 +46,18 @@
             }
           },
           "namedScores": {
-            "total_latency_ms_sum": 2200,
+            "total_latency_ms_sum": 78261,
             "total_latency_ms_count": 2,
-            "ttft_ms_sum": 1410,
+            "ttft_ms_sum": 982,
             "ttft_ms_count": 2,
-            "output_tokens_per_second_sum": 121.53145010864758,
+            "output_tokens_per_second_sum": 263.1728113170749,
             "output_tokens_per_second_count": 2,
-            "completion_tokens_sum": 48,
+            "completion_tokens_sum": 10105,
             "completion_tokens_count": 2,
-            "avg_total_latency_ms": 1100,
-            "avg_ttft_ms": 705,
-            "avg_output_tokens_per_second": 60.76572505432379,
-            "avg_completion_tokens": 24
+            "avg_total_latency_ms": 39130.5,
+            "avg_ttft_ms": 491,
+            "avg_output_tokens_per_second": 131.58640565853744,
+            "avg_completion_tokens": 5052.5
           },
           "namedScoresCount": {
             "total_latency_ms_sum": 2,
@@ -86,7 +86,7 @@
         "raw": "Write 8 bullet points about {{topic}}.\nEach bullet must be 18 to 25 words.\nDo not add an introduction or conclusion.",
         "label": "prompts/token-speed.txt: Write 8 bullet points about {{topic}}.\nEach bullet must be 18 to 25 words.\nDo not add an introduction or conclusion.",
         "id": "144e0322e708e63bf44a18931d5f3ca8db3587c43f6390cdb89c78bc1fc9181d",
-        "provider": "qwen3.5-omni-plus singapore",
+        "provider": "qwen3.5-flash singapore",
         "metrics": {
           "score": 2,
           "testPassCount": 2,
@@ -94,12 +94,12 @@
           "testErrorCount": 0,
           "assertPassCount": 2,
           "assertFailCount": 0,
-          "totalLatencyMs": 21273,
+          "totalLatencyMs": 111805,
           "tokenUsage": {
-            "prompt": 91,
-            "completion": 395,
+            "prompt": 87,
+            "completion": 13671,
             "cached": 0,
-            "total": 486,
+            "total": 13758,
             "numRequests": 2,
             "completionDetails": {
               "reasoning": 0,
@@ -124,18 +124,18 @@
             }
           },
           "namedScores": {
-            "total_latency_ms_sum": 21258,
+            "total_latency_ms_sum": 111786,
             "total_latency_ms_count": 2,
-            "ttft_ms_sum": 7422,
+            "ttft_ms_sum": 1992,
             "ttft_ms_count": 2,
-            "output_tokens_per_second_sum": 72.04284086845891,
+            "output_tokens_per_second_sum": 248.20493259936066,
             "output_tokens_per_second_count": 2,
-            "completion_tokens_sum": 395,
+            "completion_tokens_sum": 13671,
             "completion_tokens_count": 2,
-            "avg_total_latency_ms": 10629,
-            "avg_ttft_ms": 3711,
-            "avg_output_tokens_per_second": 36.021420434229455,
-            "avg_completion_tokens": 197.5
+            "avg_total_latency_ms": 55893,
+            "avg_ttft_ms": 996,
+            "avg_output_tokens_per_second": 124.10246629968033,
+            "avg_completion_tokens": 6835.5
           },
           "namedScoresCount": {
             "total_latency_ms_sum": 2,
@@ -172,12 +172,12 @@
           "testErrorCount": 0,
           "assertPassCount": 2,
           "assertFailCount": 0,
-          "totalLatencyMs": 7072,
+          "totalLatencyMs": 96318,
           "tokenUsage": {
-            "prompt": 93,
-            "completion": 45,
+            "prompt": 89,
+            "completion": 12107,
             "cached": 0,
-            "total": 138,
+            "total": 12196,
             "numRequests": 2,
             "completionDetails": {
               "reasoning": 0,
@@ -202,18 +202,18 @@
             }
           },
           "namedScores": {
-            "total_latency_ms_sum": 7058,
+            "total_latency_ms_sum": 96299,
             "total_latency_ms_count": 2,
-            "ttft_ms_sum": 7057,
+            "ttft_ms_sum": 12719,
             "ttft_ms_count": 2,
-            "output_tokens_per_second_sum": 45000,
+            "output_tokens_per_second_sum": 289.5515701585542,
             "output_tokens_per_second_count": 2,
-            "completion_tokens_sum": 45,
+            "completion_tokens_sum": 12107,
             "completion_tokens_count": 2,
-            "avg_total_latency_ms": 3529,
-            "avg_ttft_ms": 3528.5,
-            "avg_output_tokens_per_second": 22500,
-            "avg_completion_tokens": 22.5
+            "avg_total_latency_ms": 48149.5,
+            "avg_ttft_ms": 6359.5,
+            "avg_output_tokens_per_second": 144.7757850792771,
+            "avg_completion_tokens": 6053.5
           },
           "namedScoresCount": {
             "total_latency_ms_sum": 2,
@@ -250,12 +250,12 @@
           "testErrorCount": 0,
           "assertPassCount": 2,
           "assertFailCount": 0,
-          "totalLatencyMs": 11478,
+          "totalLatencyMs": 106411,
           "tokenUsage": {
-            "prompt": 91,
-            "completion": 381,
+            "prompt": 87,
+            "completion": 13590,
             "cached": 0,
-            "total": 472,
+            "total": 13677,
             "numRequests": 2,
             "completionDetails": {
               "reasoning": 0,
@@ -280,18 +280,18 @@
             }
           },
           "namedScores": {
-            "total_latency_ms_sum": 11465,
+            "total_latency_ms_sum": 106392,
             "total_latency_ms_count": 2,
-            "ttft_ms_sum": 10807,
+            "ttft_ms_sum": 9029,
             "ttft_ms_count": 2,
-            "output_tokens_per_second_sum": 1156.588113235512,
+            "output_tokens_per_second_sum": 279.2110916936771,
             "output_tokens_per_second_count": 2,
-            "completion_tokens_sum": 381,
+            "completion_tokens_sum": 13590,
             "completion_tokens_count": 2,
-            "avg_total_latency_ms": 5732.5,
-            "avg_ttft_ms": 5403.5,
-            "avg_output_tokens_per_second": 578.294056617756,
-            "avg_completion_tokens": 190.5
+            "avg_total_latency_ms": 53196,
+            "avg_ttft_ms": 4514.5,
+            "avg_output_tokens_per_second": 139.60554584683854,
+            "avg_completion_tokens": 6795
           },
           "namedScoresCount": {
             "total_latency_ms_sum": 2,
@@ -313,6 +313,110 @@
             "completion_tokens_sum": 2,
             "completion_tokens_count": 2
           },
+          "cost": 0
+        }
+      },
+      {
+        "raw": "Write one plain sentence about {{topic}}.\nKeep it between 18 and 28 words.\nDo not use markdown, quotes, or a list.",
+        "label": "prompts/ttft.txt: Write one plain sentence about {{topic}}.\nKeep it between 18 and 28 words.\nDo not use markdown, quotes, or a list.",
+        "id": "e79a4da9821faa14c99ad2a9f2322f2a37f157ea325f3561670c1175bbefa7d3",
+        "provider": "qwen3.5 xgd local",
+        "metrics": {
+          "score": 0,
+          "testPassCount": 0,
+          "testFailCount": 0,
+          "testErrorCount": 2,
+          "assertPassCount": 0,
+          "assertFailCount": 0,
+          "totalLatencyMs": 1429,
+          "tokenUsage": {
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "total": 0,
+            "numRequests": 2,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "namedScores": {
+            "avg_total_latency_ms": 0,
+            "avg_ttft_ms": 0,
+            "avg_output_tokens_per_second": 0,
+            "avg_completion_tokens": 0
+          },
+          "namedScoresCount": {},
+          "namedScoreWeights": {},
+          "cost": 0
+        }
+      },
+      {
+        "raw": "Write 8 bullet points about {{topic}}.\nEach bullet must be 18 to 25 words.\nDo not add an introduction or conclusion.",
+        "label": "prompts/token-speed.txt: Write 8 bullet points about {{topic}}.\nEach bullet must be 18 to 25 words.\nDo not add an introduction or conclusion.",
+        "id": "144e0322e708e63bf44a18931d5f3ca8db3587c43f6390cdb89c78bc1fc9181d",
+        "provider": "qwen3.5 xgd local",
+        "metrics": {
+          "score": 0,
+          "testPassCount": 0,
+          "testFailCount": 0,
+          "testErrorCount": 2,
+          "assertPassCount": 0,
+          "assertFailCount": 0,
+          "totalLatencyMs": 1393,
+          "tokenUsage": {
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "total": 0,
+            "numRequests": 2,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "namedScores": {
+            "avg_total_latency_ms": 0,
+            "avg_ttft_ms": 0,
+            "avg_output_tokens_per_second": 0,
+            "avg_completion_tokens": 0
+          },
+          "namedScoresCount": {},
+          "namedScoreWeights": {},
           "cost": 0
         }
       }
@@ -320,18 +424,110 @@
     "results": [
       {
         "cost": 0,
+        "error": "Request failed with 400: 400 model should be in provider/model format",
+        "gradingResult": null,
+        "id": "2d28f9db-cf55-4a0e-9026-9a7613cbdd26",
+        "latencyMs": 653,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Write 8 bullet points about API latency benchmarking.\nEach bullet must be 18 to 25 words.\nDo not add an introduction or conclusion.",
+          "label": "prompts/token-speed.txt: Write 8 bullet points about {{topic}}.\nEach bullet must be 18 to 25 words.\nDo not add an introduction or conclusion.",
+          "config": {}
+        },
+        "promptId": "144e0322e708e63bf44a18931d5f3ca8db3587c43f6390cdb89c78bc1fc9181d",
+        "promptIdx": 5,
+        "provider": {
+          "id": "./providers/dashscope-compatible.js",
+          "label": "qwen3.5 xgd local"
+        },
+        "response": {
+          "error": "Request failed with 400: 400 model should be in provider/model format"
+        },
+        "score": 0,
+        "success": false,
+        "testCase": {
+          "description": "technical topic",
+          "vars": {
+            "topic": "API latency benchmarking"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://./tests/metrics.js:benchmarkMetrics"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "vars": {
+          "topic": "API latency benchmarking"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 2
+      },
+      {
+        "cost": 0,
+        "error": "Request failed with 400: 400 model should be in provider/model format",
+        "gradingResult": null,
+        "id": "eeb33aa3-71dc-4103-b350-9a5634e85cb5",
+        "latencyMs": 699,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Write one plain sentence about API latency benchmarking.\nKeep it between 18 and 28 words.\nDo not use markdown, quotes, or a list.",
+          "label": "prompts/ttft.txt: Write one plain sentence about {{topic}}.\nKeep it between 18 and 28 words.\nDo not use markdown, quotes, or a list.",
+          "config": {}
+        },
+        "promptId": "e79a4da9821faa14c99ad2a9f2322f2a37f157ea325f3561670c1175bbefa7d3",
+        "promptIdx": 4,
+        "provider": {
+          "id": "./providers/dashscope-compatible.js",
+          "label": "qwen3.5 xgd local"
+        },
+        "response": {
+          "error": "Request failed with 400: 400 model should be in provider/model format"
+        },
+        "score": 0,
+        "success": false,
+        "testCase": {
+          "description": "technical topic",
+          "vars": {
+            "topic": "API latency benchmarking"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://./tests/metrics.js:benchmarkMetrics"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "vars": {
+          "topic": "API latency benchmarking"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 2
+      },
+      {
+        "cost": 0,
         "gradingResult": {
           "pass": true,
           "score": 1,
           "reason": "All assertions passed",
           "namedScores": {
-            "total_latency_ms_sum": 1109,
+            "total_latency_ms_sum": 42186,
             "total_latency_ms_count": 1,
-            "ttft_ms_sum": 710,
+            "ttft_ms_sum": 471,
             "ttft_ms_count": 1,
-            "output_tokens_per_second_sum": 60.150375939849624,
+            "output_tokens_per_second_sum": 121.20340405130048,
             "output_tokens_per_second_count": 1,
-            "completion_tokens_sum": 24,
+            "completion_tokens_sum": 5056,
             "completion_tokens_count": 1
           },
           "namedScoreWeights": {
@@ -357,13 +553,13 @@
               "score": 1,
               "reason": "Collected benchmark metrics",
               "namedScores": {
-                "total_latency_ms_sum": 1109,
+                "total_latency_ms_sum": 42186,
                 "total_latency_ms_count": 1,
-                "ttft_ms_sum": 710,
+                "ttft_ms_sum": 471,
                 "ttft_ms_count": 1,
-                "output_tokens_per_second_sum": 60.150375939849624,
+                "output_tokens_per_second_sum": 121.20340405130048,
                 "output_tokens_per_second_count": 1,
-                "completion_tokens_sum": 24,
+                "completion_tokens_sum": 5056,
                 "completion_tokens_count": 1
               },
               "namedScoreWeights": {
@@ -383,16 +579,16 @@
             }
           ]
         },
-        "id": "84b3ff15-8ccc-4415-9e72-230d8e18b6de",
-        "latencyMs": 1116,
+        "id": "e67d16fd-fcd4-4b21-aa1f-9ad5236d765b",
+        "latencyMs": 42195,
         "namedScores": {
-          "total_latency_ms_sum": 1109,
+          "total_latency_ms_sum": 42186,
           "total_latency_ms_count": 1,
-          "ttft_ms_sum": 710,
+          "ttft_ms_sum": 471,
           "ttft_ms_count": 1,
-          "output_tokens_per_second_sum": 60.150375939849624,
+          "output_tokens_per_second_sum": 121.20340405130048,
           "output_tokens_per_second_count": 1,
-          "completion_tokens_sum": 24,
+          "completion_tokens_sum": 5056,
           "completion_tokens_count": 1
         },
         "prompt": {
@@ -404,24 +600,24 @@
         "promptIdx": 0,
         "provider": {
           "id": "./providers/dashscope-compatible.js",
-          "label": "qwen3.5-omni-plus singapore"
+          "label": "qwen3.5-flash singapore"
         },
         "response": {
-          "output": "API latency benchmarking measures response times under load to ensure systems meet performance goals and identify potential bottlenecks effectively.",
+          "output": "Effective API latency benchmarking requires consistent testing environments to accurately measure request response times under various simulated load conditions for overall system optimization.",
           "tokenUsage": {
-            "prompt": 47,
-            "completion": 24,
-            "total": 71
+            "prompt": 45,
+            "completion": 5056,
+            "total": 5101
           },
           "metadata": {
             "apiBaseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
             "region": "singapore",
-            "model": "qwen3.5-omni-plus",
-            "totalLatencyMs": 1109,
-            "ttftMs": 710,
-            "completionTokenCount": 24,
+            "model": "qwen3.5-flash",
+            "totalLatencyMs": 42186,
+            "ttftMs": 471,
+            "completionTokenCount": 5056,
             "completionTokenCountSource": "usage",
-            "outputTokensPerSecond": 60.150375939849624
+            "outputTokensPerSecond": 121.20340405130048
           }
         },
         "score": 1,
@@ -447,12 +643,12 @@
         "metadata": {
           "apiBaseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
           "region": "singapore",
-          "model": "qwen3.5-omni-plus",
-          "totalLatencyMs": 1109,
-          "ttftMs": 710,
-          "completionTokenCount": 24,
+          "model": "qwen3.5-flash",
+          "totalLatencyMs": 42186,
+          "ttftMs": 471,
+          "completionTokenCount": 5056,
           "completionTokenCountSource": "usage",
-          "outputTokensPerSecond": 60.150375939849624,
+          "outputTokensPerSecond": 121.20340405130048,
           "_promptfooFileMetadata": {}
         },
         "failureReason": 0
@@ -464,13 +660,13 @@
           "score": 1,
           "reason": "All assertions passed",
           "namedScores": {
-            "total_latency_ms_sum": 3404,
+            "total_latency_ms_sum": 43028,
             "total_latency_ms_count": 1,
-            "ttft_ms_sum": 3404,
+            "ttft_ms_sum": 4475,
             "ttft_ms_count": 1,
-            "output_tokens_per_second_sum": 22000,
+            "output_tokens_per_second_sum": 143.75016211449176,
             "output_tokens_per_second_count": 1,
-            "completion_tokens_sum": 22,
+            "completion_tokens_sum": 5542,
             "completion_tokens_count": 1
           },
           "namedScoreWeights": {
@@ -496,13 +692,13 @@
               "score": 1,
               "reason": "Collected benchmark metrics",
               "namedScores": {
-                "total_latency_ms_sum": 3404,
+                "total_latency_ms_sum": 43028,
                 "total_latency_ms_count": 1,
-                "ttft_ms_sum": 3404,
+                "ttft_ms_sum": 4475,
                 "ttft_ms_count": 1,
-                "output_tokens_per_second_sum": 22000,
+                "output_tokens_per_second_sum": 143.75016211449176,
                 "output_tokens_per_second_count": 1,
-                "completion_tokens_sum": 22,
+                "completion_tokens_sum": 5542,
                 "completion_tokens_count": 1
               },
               "namedScoreWeights": {
@@ -522,16 +718,16 @@
             }
           ]
         },
-        "id": "e5d02b11-e5cd-4176-9ebb-5bb45313f8d4",
-        "latencyMs": 3412,
+        "id": "93c6ce17-af55-438c-99f6-a04e1f5fd5d1",
+        "latencyMs": 43037,
         "namedScores": {
-          "total_latency_ms_sum": 3404,
+          "total_latency_ms_sum": 43028,
           "total_latency_ms_count": 1,
-          "ttft_ms_sum": 3404,
+          "ttft_ms_sum": 4475,
           "ttft_ms_count": 1,
-          "output_tokens_per_second_sum": 22000,
+          "output_tokens_per_second_sum": 143.75016211449176,
           "output_tokens_per_second_count": 1,
-          "completion_tokens_sum": 22,
+          "completion_tokens_sum": 5542,
           "completion_tokens_count": 1
         },
         "prompt": {
@@ -546,21 +742,21 @@
           "label": "qwen3.5-flash united-states"
         },
         "response": {
-          "output": "Measuring API latency requires sending thousands of requests to capture accurate response times under realistic load conditions for performance optimization.",
+          "output": "Conducting regular API latency benchmarks allows engineers to monitor service health and maintain fast response times for users under heavy load conditions.",
           "tokenUsage": {
-            "prompt": 47,
-            "completion": 22,
-            "total": 69
+            "prompt": 45,
+            "completion": 5542,
+            "total": 5587
           },
           "metadata": {
             "apiBaseUrl": "https://dashscope-us.aliyuncs.com/compatible-mode/v1",
             "region": "united-states",
             "model": "qwen3.5-flash",
-            "totalLatencyMs": 3404,
-            "ttftMs": 3404,
-            "completionTokenCount": 22,
+            "totalLatencyMs": 43028,
+            "ttftMs": 4475,
+            "completionTokenCount": 5542,
             "completionTokenCountSource": "usage",
-            "outputTokensPerSecond": 22000
+            "outputTokensPerSecond": 143.75016211449176
           }
         },
         "score": 1,
@@ -587,11 +783,11 @@
           "apiBaseUrl": "https://dashscope-us.aliyuncs.com/compatible-mode/v1",
           "region": "united-states",
           "model": "qwen3.5-flash",
-          "totalLatencyMs": 3404,
-          "ttftMs": 3404,
-          "completionTokenCount": 22,
+          "totalLatencyMs": 43028,
+          "ttftMs": 4475,
+          "completionTokenCount": 5542,
           "completionTokenCountSource": "usage",
-          "outputTokensPerSecond": 22000,
+          "outputTokensPerSecond": 143.75016211449176,
           "_promptfooFileMetadata": {}
         },
         "failureReason": 0
@@ -603,13 +799,13 @@
           "score": 1,
           "reason": "All assertions passed",
           "namedScores": {
-            "total_latency_ms_sum": 5590,
+            "total_latency_ms_sum": 47891,
             "total_latency_ms_count": 1,
-            "ttft_ms_sum": 5278,
+            "ttft_ms_sum": 4412,
             "ttft_ms_count": 1,
-            "output_tokens_per_second_sum": 564.1025641025641,
+            "output_tokens_per_second_sum": 139.83762276041307,
             "output_tokens_per_second_count": 1,
-            "completion_tokens_sum": 176,
+            "completion_tokens_sum": 6080,
             "completion_tokens_count": 1
           },
           "namedScoreWeights": {
@@ -635,13 +831,13 @@
               "score": 1,
               "reason": "Collected benchmark metrics",
               "namedScores": {
-                "total_latency_ms_sum": 5590,
+                "total_latency_ms_sum": 47891,
                 "total_latency_ms_count": 1,
-                "ttft_ms_sum": 5278,
+                "ttft_ms_sum": 4412,
                 "ttft_ms_count": 1,
-                "output_tokens_per_second_sum": 564.1025641025641,
+                "output_tokens_per_second_sum": 139.83762276041307,
                 "output_tokens_per_second_count": 1,
-                "completion_tokens_sum": 176,
+                "completion_tokens_sum": 6080,
                 "completion_tokens_count": 1
               },
               "namedScoreWeights": {
@@ -661,16 +857,16 @@
             }
           ]
         },
-        "id": "0c351481-958c-435b-9cdf-c70753edc215",
-        "latencyMs": 5596,
+        "id": "d9ccbae2-bbf6-4e64-8611-84f9bdc7416a",
+        "latencyMs": 47900,
         "namedScores": {
-          "total_latency_ms_sum": 5590,
+          "total_latency_ms_sum": 47891,
           "total_latency_ms_count": 1,
-          "ttft_ms_sum": 5278,
+          "ttft_ms_sum": 4412,
           "ttft_ms_count": 1,
-          "output_tokens_per_second_sum": 564.1025641025641,
+          "output_tokens_per_second_sum": 139.83762276041307,
           "output_tokens_per_second_count": 1,
-          "completion_tokens_sum": 176,
+          "completion_tokens_sum": 6080,
           "completion_tokens_count": 1
         },
         "prompt": {
@@ -685,21 +881,21 @@
           "label": "qwen3.5-flash united-states"
         },
         "response": {
-          "output": "*   Measuring API latency requires precise timestamps at request entry and response exit points for accurate data collection.\n*   Network conditions significantly impact benchmark results, so testing must occur across diverse geographic locations consistently.\n*   Concurrent user simulation helps identify performance bottlenecks that only appear under heavy load or stress scenarios.\n*   Consistent hardware configurations ensure fair comparisons between different API versions or optimization strategies during testing phases.\n*   Statistical analysis of percentile metrics like p95 and p99 reveals tail latency issues hidden by average response times.\n*   Caching mechanisms often reduce perceived latency, making it essential to test both cached and uncached request paths.\n*   Database query efficiency directly influences overall API speed, requiring deep inspection of backend execution plans regularly.\n*   Automated benchmarking pipelines integrate seamlessly into continuous deployment workflows to monitor latency trends over extended periods.",
+          "output": "* Measuring response times accurately helps identify critical performance bottlenecks within your complex distributed system architecture effectively today for users.\n* You should always establish baseline metrics before implementing any significant changes to ensure consistent application performance levels remain stable.\n* High concurrency testing reveals how your API handles multiple simultaneous requests without degrading overall service quality significantly over time.\n* Network conditions often impact latency results, so testing across various geographic locations provides a more realistic view of global performance.\n* Monitoring percentiles like p95 and p99 is crucial because average values can hide occasional severe delays affecting end user experience negatively.\n* Automated scripts allow continuous integration pipelines to track latency trends automatically whenever new code deployments occur frequently in production environments.\n* Resource utilization during peak load periods indicates whether server capacity needs scaling to maintain acceptable response time thresholds consistently.\n* Effective caching strategies significantly reduce database queries, which directly lowers backend processing time and improves total API throughput capabilities substantially.",
           "tokenUsage": {
-            "prompt": 46,
-            "completion": 176,
-            "total": 222
+            "prompt": 44,
+            "completion": 6080,
+            "total": 6124
           },
           "metadata": {
             "apiBaseUrl": "https://dashscope-us.aliyuncs.com/compatible-mode/v1",
             "region": "united-states",
             "model": "qwen3.5-flash",
-            "totalLatencyMs": 5590,
-            "ttftMs": 5278,
-            "completionTokenCount": 176,
+            "totalLatencyMs": 47891,
+            "ttftMs": 4412,
+            "completionTokenCount": 6080,
             "completionTokenCountSource": "usage",
-            "outputTokensPerSecond": 564.1025641025641
+            "outputTokensPerSecond": 139.83762276041307
           }
         },
         "score": 1,
@@ -726,11 +922,11 @@
           "apiBaseUrl": "https://dashscope-us.aliyuncs.com/compatible-mode/v1",
           "region": "united-states",
           "model": "qwen3.5-flash",
-          "totalLatencyMs": 5590,
-          "ttftMs": 5278,
-          "completionTokenCount": 176,
+          "totalLatencyMs": 47891,
+          "ttftMs": 4412,
+          "completionTokenCount": 6080,
           "completionTokenCountSource": "usage",
-          "outputTokensPerSecond": 564.1025641025641,
+          "outputTokensPerSecond": 139.83762276041307,
           "_promptfooFileMetadata": {}
         },
         "failureReason": 0
@@ -742,13 +938,13 @@
           "score": 1,
           "reason": "All assertions passed",
           "namedScores": {
-            "total_latency_ms_sum": 16166,
+            "total_latency_ms_sum": 62153,
             "total_latency_ms_count": 1,
-            "ttft_ms_sum": 6186,
+            "ttft_ms_sum": 985,
             "ttft_ms_count": 1,
-            "output_tokens_per_second_sum": 19.138276553106213,
+            "output_tokens_per_second_sum": 127.71383730054932,
             "output_tokens_per_second_count": 1,
-            "completion_tokens_sum": 191,
+            "completion_tokens_sum": 7812,
             "completion_tokens_count": 1
           },
           "namedScoreWeights": {
@@ -774,13 +970,13 @@
               "score": 1,
               "reason": "Collected benchmark metrics",
               "namedScores": {
-                "total_latency_ms_sum": 16166,
+                "total_latency_ms_sum": 62153,
                 "total_latency_ms_count": 1,
-                "ttft_ms_sum": 6186,
+                "ttft_ms_sum": 985,
                 "ttft_ms_count": 1,
-                "output_tokens_per_second_sum": 19.138276553106213,
+                "output_tokens_per_second_sum": 127.71383730054932,
                 "output_tokens_per_second_count": 1,
-                "completion_tokens_sum": 191,
+                "completion_tokens_sum": 7812,
                 "completion_tokens_count": 1
               },
               "namedScoreWeights": {
@@ -800,16 +996,16 @@
             }
           ]
         },
-        "id": "b4757e46-9dda-46d7-87ad-b8133109f4f8",
-        "latencyMs": 16173,
+        "id": "603385ad-116e-46c7-8e99-497821a2bf12",
+        "latencyMs": 62163,
         "namedScores": {
-          "total_latency_ms_sum": 16166,
+          "total_latency_ms_sum": 62153,
           "total_latency_ms_count": 1,
-          "ttft_ms_sum": 6186,
+          "ttft_ms_sum": 985,
           "ttft_ms_count": 1,
-          "output_tokens_per_second_sum": 19.138276553106213,
+          "output_tokens_per_second_sum": 127.71383730054932,
           "output_tokens_per_second_count": 1,
-          "completion_tokens_sum": 191,
+          "completion_tokens_sum": 7812,
           "completion_tokens_count": 1
         },
         "prompt": {
@@ -821,24 +1017,24 @@
         "promptIdx": 1,
         "provider": {
           "id": "./providers/dashscope-compatible.js",
-          "label": "qwen3.5-omni-plus singapore"
+          "label": "qwen3.5-flash singapore"
         },
         "response": {
-          "output": "*   Establish clear baseline metrics by measuring current response times under normal load conditions before making any system changes.\n*   Simulate realistic user traffic patterns using diverse payloads to ensure latency measurements reflect actual production environment behaviors accurately.\n*   Monitor percentile distributions like p95 and p99 instead of averages to identify rare but critical spikes in API response times.\n*   Isolate network overhead from processing delays by testing locally and remotely to pinpoint exactly where latency bottlenecks are occurring.\n*   Conduct sustained load tests over extended periods to detect memory leaks or resource exhaustion that gradually degrade API performance.\n*   Compare latency results across different geographic regions to understand how content delivery networks impact global user experience significantly.\n*   Automate benchmarking pipelines within continuous integration workflows to catch performance regressions immediately after new code deployments occur.\n*   Document all test configurations and environmental variables thoroughly so that latency results remain reproducible and comparable over time.",
+          "output": "* Measuring API response times accurately helps identify critical performance bottlenecks within your complex distributed system architecture effectively right at this moment.\n* You should always simulate realistic traffic patterns when testing endpoints to ensure accurate latency measurements during high peak usage periods.\n* Consistent monitoring tools provide essential data regarding average request durations and specific percentile response times for optimization purposes clearly.\n* Network conditions significantly impact results, so testing from multiple geographic locations ensures full comprehensive understanding of global service availability.\n* Analyzing throughput alongside latency reveals how system load affects individual request processing speeds under varying stress conditions very consistently.\n* Establishing baseline metrics allows teams to detect regressions quickly whenever new code deployments occur in live production environments frequently.\n* Automated scripts can execute thousands of requests per second to generate statistically significant datasets for comprehensive detailed analysis later.\n* Caching strategies often reduce perceived latency, making it truly crucial to benchmark both cached and uncached endpoint behaviors separately.",
           "tokenUsage": {
-            "prompt": 46,
-            "completion": 191,
-            "total": 237
+            "prompt": 44,
+            "completion": 7812,
+            "total": 7856
           },
           "metadata": {
             "apiBaseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
             "region": "singapore",
-            "model": "qwen3.5-omni-plus",
-            "totalLatencyMs": 16166,
-            "ttftMs": 6186,
-            "completionTokenCount": 191,
+            "model": "qwen3.5-flash",
+            "totalLatencyMs": 62153,
+            "ttftMs": 985,
+            "completionTokenCount": 7812,
             "completionTokenCountSource": "usage",
-            "outputTokensPerSecond": 19.138276553106213
+            "outputTokensPerSecond": 127.71383730054932
           }
         },
         "score": 1,
@@ -864,15 +1060,107 @@
         "metadata": {
           "apiBaseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
           "region": "singapore",
-          "model": "qwen3.5-omni-plus",
-          "totalLatencyMs": 16166,
-          "ttftMs": 6186,
-          "completionTokenCount": 191,
+          "model": "qwen3.5-flash",
+          "totalLatencyMs": 62153,
+          "ttftMs": 985,
+          "completionTokenCount": 7812,
           "completionTokenCountSource": "usage",
-          "outputTokensPerSecond": 19.138276553106213,
+          "outputTokensPerSecond": 127.71383730054932,
           "_promptfooFileMetadata": {}
         },
         "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "error": "Request failed with 400: 400 model should be in provider/model format",
+        "gradingResult": null,
+        "id": "621ca29d-add3-4e33-83b8-d913a21fd9ee",
+        "latencyMs": 730,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Write one plain sentence about incident response automation.\nKeep it between 18 and 28 words.\nDo not use markdown, quotes, or a list.",
+          "label": "prompts/ttft.txt: Write one plain sentence about {{topic}}.\nKeep it between 18 and 28 words.\nDo not use markdown, quotes, or a list.",
+          "config": {}
+        },
+        "promptId": "e79a4da9821faa14c99ad2a9f2322f2a37f157ea325f3561670c1175bbefa7d3",
+        "promptIdx": 4,
+        "provider": {
+          "id": "./providers/dashscope-compatible.js",
+          "label": "qwen3.5 xgd local"
+        },
+        "response": {
+          "error": "Request failed with 400: 400 model should be in provider/model format"
+        },
+        "score": 0,
+        "success": false,
+        "testCase": {
+          "description": "operational topic",
+          "vars": {
+            "topic": "incident response automation"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://./tests/metrics.js:benchmarkMetrics"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "vars": {
+          "topic": "incident response automation"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 2
+      },
+      {
+        "cost": 0,
+        "error": "Request failed with 400: 400 model should be in provider/model format",
+        "gradingResult": null,
+        "id": "7d8ccdb5-eb48-4c82-b1d8-bb60e3a51d76",
+        "latencyMs": 740,
+        "namedScores": {},
+        "prompt": {
+          "raw": "Write 8 bullet points about incident response automation.\nEach bullet must be 18 to 25 words.\nDo not add an introduction or conclusion.",
+          "label": "prompts/token-speed.txt: Write 8 bullet points about {{topic}}.\nEach bullet must be 18 to 25 words.\nDo not add an introduction or conclusion.",
+          "config": {}
+        },
+        "promptId": "144e0322e708e63bf44a18931d5f3ca8db3587c43f6390cdb89c78bc1fc9181d",
+        "promptIdx": 5,
+        "provider": {
+          "id": "./providers/dashscope-compatible.js",
+          "label": "qwen3.5 xgd local"
+        },
+        "response": {
+          "error": "Request failed with 400: 400 model should be in provider/model format"
+        },
+        "score": 0,
+        "success": false,
+        "testCase": {
+          "description": "operational topic",
+          "vars": {
+            "topic": "incident response automation"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://./tests/metrics.js:benchmarkMetrics"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "vars": {
+          "topic": "incident response automation"
+        },
+        "metadata": {
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 2
       },
       {
         "cost": 0,
@@ -881,13 +1169,13 @@
           "score": 1,
           "reason": "All assertions passed",
           "namedScores": {
-            "total_latency_ms_sum": 1091,
+            "total_latency_ms_sum": 36075,
             "total_latency_ms_count": 1,
-            "ttft_ms_sum": 700,
+            "ttft_ms_sum": 511,
             "ttft_ms_count": 1,
-            "output_tokens_per_second_sum": 61.38107416879795,
+            "output_tokens_per_second_sum": 141.96940726577438,
             "output_tokens_per_second_count": 1,
-            "completion_tokens_sum": 24,
+            "completion_tokens_sum": 5049,
             "completion_tokens_count": 1
           },
           "namedScoreWeights": {
@@ -913,13 +1201,13 @@
               "score": 1,
               "reason": "Collected benchmark metrics",
               "namedScores": {
-                "total_latency_ms_sum": 1091,
+                "total_latency_ms_sum": 36075,
                 "total_latency_ms_count": 1,
-                "ttft_ms_sum": 700,
+                "ttft_ms_sum": 511,
                 "ttft_ms_count": 1,
-                "output_tokens_per_second_sum": 61.38107416879795,
+                "output_tokens_per_second_sum": 141.96940726577438,
                 "output_tokens_per_second_count": 1,
-                "completion_tokens_sum": 24,
+                "completion_tokens_sum": 5049,
                 "completion_tokens_count": 1
               },
               "namedScoreWeights": {
@@ -939,16 +1227,16 @@
             }
           ]
         },
-        "id": "a578b6a0-996d-4b04-836f-93343360477c",
-        "latencyMs": 1098,
+        "id": "a54b6332-b5c4-4655-a38c-2a5bb8e4a583",
+        "latencyMs": 36084,
         "namedScores": {
-          "total_latency_ms_sum": 1091,
+          "total_latency_ms_sum": 36075,
           "total_latency_ms_count": 1,
-          "ttft_ms_sum": 700,
+          "ttft_ms_sum": 511,
           "ttft_ms_count": 1,
-          "output_tokens_per_second_sum": 61.38107416879795,
+          "output_tokens_per_second_sum": 141.96940726577438,
           "output_tokens_per_second_count": 1,
-          "completion_tokens_sum": 24,
+          "completion_tokens_sum": 5049,
           "completion_tokens_count": 1
         },
         "prompt": {
@@ -960,24 +1248,24 @@
         "promptIdx": 0,
         "provider": {
           "id": "./providers/dashscope-compatible.js",
-          "label": "qwen3.5-omni-plus singapore"
+          "label": "qwen3.5-flash singapore"
         },
         "response": {
-          "output": "Incident response automation uses software tools to quickly detect, analyze, and contain security threats without needing constant human intervention.",
+          "output": "Modern organizations implement incident response automation platforms to accelerate threat detection and containment processes while significantly reducing the overall workload for their security teams.",
           "tokenUsage": {
-            "prompt": 46,
-            "completion": 24,
-            "total": 70
+            "prompt": 44,
+            "completion": 5049,
+            "total": 5093
           },
           "metadata": {
             "apiBaseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
             "region": "singapore",
-            "model": "qwen3.5-omni-plus",
-            "totalLatencyMs": 1091,
-            "ttftMs": 700,
-            "completionTokenCount": 24,
+            "model": "qwen3.5-flash",
+            "totalLatencyMs": 36075,
+            "ttftMs": 511,
+            "completionTokenCount": 5049,
             "completionTokenCountSource": "usage",
-            "outputTokensPerSecond": 61.38107416879795
+            "outputTokensPerSecond": 141.96940726577438
           }
         },
         "score": 1,
@@ -1003,12 +1291,12 @@
         "metadata": {
           "apiBaseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
           "region": "singapore",
-          "model": "qwen3.5-omni-plus",
-          "totalLatencyMs": 1091,
-          "ttftMs": 700,
-          "completionTokenCount": 24,
+          "model": "qwen3.5-flash",
+          "totalLatencyMs": 36075,
+          "ttftMs": 511,
+          "completionTokenCount": 5049,
           "completionTokenCountSource": "usage",
-          "outputTokensPerSecond": 61.38107416879795,
+          "outputTokensPerSecond": 141.96940726577438,
           "_promptfooFileMetadata": {}
         },
         "failureReason": 0
@@ -1020,13 +1308,13 @@
           "score": 1,
           "reason": "All assertions passed",
           "namedScores": {
-            "total_latency_ms_sum": 3654,
+            "total_latency_ms_sum": 49633,
             "total_latency_ms_count": 1,
-            "ttft_ms_sum": 3653,
+            "ttft_ms_sum": 1007,
             "ttft_ms_count": 1,
-            "output_tokens_per_second_sum": 23000,
+            "output_tokens_per_second_sum": 120.49109529881135,
             "output_tokens_per_second_count": 1,
-            "completion_tokens_sum": 23,
+            "completion_tokens_sum": 5859,
             "completion_tokens_count": 1
           },
           "namedScoreWeights": {
@@ -1052,13 +1340,13 @@
               "score": 1,
               "reason": "Collected benchmark metrics",
               "namedScores": {
-                "total_latency_ms_sum": 3654,
+                "total_latency_ms_sum": 49633,
                 "total_latency_ms_count": 1,
-                "ttft_ms_sum": 3653,
+                "ttft_ms_sum": 1007,
                 "ttft_ms_count": 1,
-                "output_tokens_per_second_sum": 23000,
+                "output_tokens_per_second_sum": 120.49109529881135,
                 "output_tokens_per_second_count": 1,
-                "completion_tokens_sum": 23,
+                "completion_tokens_sum": 5859,
                 "completion_tokens_count": 1
               },
               "namedScoreWeights": {
@@ -1078,16 +1366,155 @@
             }
           ]
         },
-        "id": "711a6406-627e-4d67-b38d-b85a9723e060",
-        "latencyMs": 3660,
+        "id": "d83b3920-3f10-499e-b932-20f943590977",
+        "latencyMs": 49642,
         "namedScores": {
-          "total_latency_ms_sum": 3654,
+          "total_latency_ms_sum": 49633,
           "total_latency_ms_count": 1,
-          "ttft_ms_sum": 3653,
+          "ttft_ms_sum": 1007,
           "ttft_ms_count": 1,
-          "output_tokens_per_second_sum": 23000,
+          "output_tokens_per_second_sum": 120.49109529881135,
           "output_tokens_per_second_count": 1,
-          "completion_tokens_sum": 23,
+          "completion_tokens_sum": 5859,
+          "completion_tokens_count": 1
+        },
+        "prompt": {
+          "raw": "Write 8 bullet points about incident response automation.\nEach bullet must be 18 to 25 words.\nDo not add an introduction or conclusion.",
+          "label": "prompts/token-speed.txt: Write 8 bullet points about {{topic}}.\nEach bullet must be 18 to 25 words.\nDo not add an introduction or conclusion.",
+          "config": {}
+        },
+        "promptId": "144e0322e708e63bf44a18931d5f3ca8db3587c43f6390cdb89c78bc1fc9181d",
+        "promptIdx": 1,
+        "provider": {
+          "id": "./providers/dashscope-compatible.js",
+          "label": "qwen3.5-flash singapore"
+        },
+        "response": {
+          "output": "* Automation reduces significant manual effort by executing predefined playbooks instantly whenever security alerts trigger within your organization's network infrastructure today.\n* Security teams save valuable operational time by automating routine tasks like isolating infected endpoints during active cyber attack scenarios very quickly.\n* Integrating automated tools ensures consistent responses to threats, minimizing human error and improving overall incident handling efficiency significantly for everyone.\n* Real-time data analysis allows systems to automatically gather evidence and notify analysts without requiring immediate manual intervention from busy staff members.\n* Organizations can scale their security operations effectively using software that handles multiple incidents simultaneously across distributed global environments efficiently now.\n* Automated containment strategies prevent lateral movement of attackers by immediately blocking suspicious network traffic at critical perimeter locations within networks.\n* Continuous monitoring platforms utilize machine learning algorithms to detect anomalies and trigger automated remediation steps before damage occurs extensively anywhere.\n* Post-incident reports are generated automatically, providing detailed insights into breach timelines and actions taken for future compliance audits regularly today.",
+          "tokenUsage": {
+            "prompt": 43,
+            "completion": 5859,
+            "total": 5902
+          },
+          "metadata": {
+            "apiBaseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+            "region": "singapore",
+            "model": "qwen3.5-flash",
+            "totalLatencyMs": 49633,
+            "ttftMs": 1007,
+            "completionTokenCount": 5859,
+            "completionTokenCountSource": "usage",
+            "outputTokensPerSecond": 120.49109529881135
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "operational topic",
+          "vars": {
+            "topic": "incident response automation"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://./tests/metrics.js:benchmarkMetrics"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "vars": {
+          "topic": "incident response automation"
+        },
+        "metadata": {
+          "apiBaseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+          "region": "singapore",
+          "model": "qwen3.5-flash",
+          "totalLatencyMs": 49633,
+          "ttftMs": 1007,
+          "completionTokenCount": 5859,
+          "completionTokenCountSource": "usage",
+          "outputTokensPerSecond": 120.49109529881135,
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {
+            "total_latency_ms_sum": 53271,
+            "total_latency_ms_count": 1,
+            "ttft_ms_sum": 8244,
+            "ttft_ms_count": 1,
+            "output_tokens_per_second_sum": 145.80140804406244,
+            "output_tokens_per_second_count": 1,
+            "completion_tokens_sum": 6565,
+            "completion_tokens_count": 1
+          },
+          "namedScoreWeights": {
+            "total_latency_ms_sum": 1,
+            "total_latency_ms_count": 1,
+            "ttft_ms_sum": 1,
+            "ttft_ms_count": 1,
+            "output_tokens_per_second_sum": 1,
+            "output_tokens_per_second_count": 1,
+            "completion_tokens_sum": 1,
+            "completion_tokens_count": 1
+          },
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Collected benchmark metrics",
+              "namedScores": {
+                "total_latency_ms_sum": 53271,
+                "total_latency_ms_count": 1,
+                "ttft_ms_sum": 8244,
+                "ttft_ms_count": 1,
+                "output_tokens_per_second_sum": 145.80140804406244,
+                "output_tokens_per_second_count": 1,
+                "completion_tokens_sum": 6565,
+                "completion_tokens_count": 1
+              },
+              "namedScoreWeights": {
+                "total_latency_ms_sum": 1,
+                "total_latency_ms_count": 1,
+                "ttft_ms_sum": 1,
+                "ttft_ms_count": 1,
+                "output_tokens_per_second_sum": 1,
+                "output_tokens_per_second_count": 1,
+                "completion_tokens_sum": 1,
+                "completion_tokens_count": 1
+              },
+              "assertion": {
+                "type": "javascript",
+                "value": "file://./tests/metrics.js:benchmarkMetrics"
+              }
+            }
+          ]
+        },
+        "id": "ece9009f-071b-4790-87d9-1c8974f04d8d",
+        "latencyMs": 53281,
+        "namedScores": {
+          "total_latency_ms_sum": 53271,
+          "total_latency_ms_count": 1,
+          "ttft_ms_sum": 8244,
+          "ttft_ms_count": 1,
+          "output_tokens_per_second_sum": 145.80140804406244,
+          "output_tokens_per_second_count": 1,
+          "completion_tokens_sum": 6565,
           "completion_tokens_count": 1
         },
         "prompt": {
@@ -1102,21 +1529,21 @@
           "label": "qwen3.5-flash united-states"
         },
         "response": {
-          "output": "Incident response automation uses predefined scripts to detect threats and execute containment actions instantly without requiring manual human intervention or approval.",
+          "output": "Security teams use incident response automation to automatically block malicious traffic and isolate infected devices before humans can ever manually intervene in the process.",
           "tokenUsage": {
-            "prompt": 46,
-            "completion": 23,
-            "total": 69
+            "prompt": 44,
+            "completion": 6565,
+            "total": 6609
           },
           "metadata": {
             "apiBaseUrl": "https://dashscope-us.aliyuncs.com/compatible-mode/v1",
             "region": "united-states",
             "model": "qwen3.5-flash",
-            "totalLatencyMs": 3654,
-            "ttftMs": 3653,
-            "completionTokenCount": 23,
+            "totalLatencyMs": 53271,
+            "ttftMs": 8244,
+            "completionTokenCount": 6565,
             "completionTokenCountSource": "usage",
-            "outputTokensPerSecond": 23000
+            "outputTokensPerSecond": 145.80140804406244
           }
         },
         "score": 1,
@@ -1143,11 +1570,11 @@
           "apiBaseUrl": "https://dashscope-us.aliyuncs.com/compatible-mode/v1",
           "region": "united-states",
           "model": "qwen3.5-flash",
-          "totalLatencyMs": 3654,
-          "ttftMs": 3653,
-          "completionTokenCount": 23,
+          "totalLatencyMs": 53271,
+          "ttftMs": 8244,
+          "completionTokenCount": 6565,
           "completionTokenCountSource": "usage",
-          "outputTokensPerSecond": 23000,
+          "outputTokensPerSecond": 145.80140804406244,
           "_promptfooFileMetadata": {}
         },
         "failureReason": 0
@@ -1159,13 +1586,13 @@
           "score": 1,
           "reason": "All assertions passed",
           "namedScores": {
-            "total_latency_ms_sum": 5092,
+            "total_latency_ms_sum": 58501,
             "total_latency_ms_count": 1,
-            "ttft_ms_sum": 1236,
+            "ttft_ms_sum": 4617,
             "ttft_ms_count": 1,
-            "output_tokens_per_second_sum": 52.9045643153527,
+            "output_tokens_per_second_sum": 139.37346893326404,
             "output_tokens_per_second_count": 1,
-            "completion_tokens_sum": 204,
+            "completion_tokens_sum": 7510,
             "completion_tokens_count": 1
           },
           "namedScoreWeights": {
@@ -1191,13 +1618,13 @@
               "score": 1,
               "reason": "Collected benchmark metrics",
               "namedScores": {
-                "total_latency_ms_sum": 5092,
+                "total_latency_ms_sum": 58501,
                 "total_latency_ms_count": 1,
-                "ttft_ms_sum": 1236,
+                "ttft_ms_sum": 4617,
                 "ttft_ms_count": 1,
-                "output_tokens_per_second_sum": 52.9045643153527,
+                "output_tokens_per_second_sum": 139.37346893326404,
                 "output_tokens_per_second_count": 1,
-                "completion_tokens_sum": 204,
+                "completion_tokens_sum": 7510,
                 "completion_tokens_count": 1
               },
               "namedScoreWeights": {
@@ -1217,155 +1644,16 @@
             }
           ]
         },
-        "id": "26aa43d3-eee7-41a5-ab10-703a7a6290d1",
-        "latencyMs": 5100,
+        "id": "868d64da-f2de-4ff4-95db-90b7a08b8671",
+        "latencyMs": 58511,
         "namedScores": {
-          "total_latency_ms_sum": 5092,
+          "total_latency_ms_sum": 58501,
           "total_latency_ms_count": 1,
-          "ttft_ms_sum": 1236,
+          "ttft_ms_sum": 4617,
           "ttft_ms_count": 1,
-          "output_tokens_per_second_sum": 52.9045643153527,
+          "output_tokens_per_second_sum": 139.37346893326404,
           "output_tokens_per_second_count": 1,
-          "completion_tokens_sum": 204,
-          "completion_tokens_count": 1
-        },
-        "prompt": {
-          "raw": "Write 8 bullet points about incident response automation.\nEach bullet must be 18 to 25 words.\nDo not add an introduction or conclusion.",
-          "label": "prompts/token-speed.txt: Write 8 bullet points about {{topic}}.\nEach bullet must be 18 to 25 words.\nDo not add an introduction or conclusion.",
-          "config": {}
-        },
-        "promptId": "144e0322e708e63bf44a18931d5f3ca8db3587c43f6390cdb89c78bc1fc9181d",
-        "promptIdx": 1,
-        "provider": {
-          "id": "./providers/dashscope-compatible.js",
-          "label": "qwen3.5-omni-plus singapore"
-        },
-        "response": {
-          "output": "- Automation accelerates threat detection by instantly analyzing vast data streams to identify malicious patterns before human analysts can react effectively.\n- Automated playbooks execute predefined response steps immediately, reducing the time between initial detection and full containment of active security incidents.\n- Systems automatically isolate compromised endpoints from the network, preventing lateral movement while preserving critical evidence for subsequent forensic investigation processes.\n- Routine tasks like blocking IP addresses or resetting passwords are handled instantly, freeing up skilled staff to focus on complex strategic analysis.\n- Consistent automation ensures every incident follows the same rigorous protocol, eliminating human error and maintaining high standards during high-pressure emergency situations.\n- Real-time alerts notify relevant teams immediately through integrated channels, ensuring rapid collaboration and coordinated action across the entire security operations center.\n- Detailed logs generated by automated tools provide comprehensive audit trails, supporting compliance requirements and enabling thorough post-incident reviews for future improvements.\n- Scalable automation platforms handle increasing volumes of security events without requiring proportional increases in staffing levels or overwhelming existing operational resources.",
-          "tokenUsage": {
-            "prompt": 45,
-            "completion": 204,
-            "total": 249
-          },
-          "metadata": {
-            "apiBaseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
-            "region": "singapore",
-            "model": "qwen3.5-omni-plus",
-            "totalLatencyMs": 5092,
-            "ttftMs": 1236,
-            "completionTokenCount": 204,
-            "completionTokenCountSource": "usage",
-            "outputTokensPerSecond": 52.9045643153527
-          }
-        },
-        "score": 1,
-        "success": true,
-        "testCase": {
-          "description": "operational topic",
-          "vars": {
-            "topic": "incident response automation"
-          },
-          "assert": [
-            {
-              "type": "javascript",
-              "value": "file://./tests/metrics.js:benchmarkMetrics"
-            }
-          ],
-          "options": {},
-          "metadata": {}
-        },
-        "testIdx": 1,
-        "vars": {
-          "topic": "incident response automation"
-        },
-        "metadata": {
-          "apiBaseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
-          "region": "singapore",
-          "model": "qwen3.5-omni-plus",
-          "totalLatencyMs": 5092,
-          "ttftMs": 1236,
-          "completionTokenCount": 204,
-          "completionTokenCountSource": "usage",
-          "outputTokensPerSecond": 52.9045643153527,
-          "_promptfooFileMetadata": {}
-        },
-        "failureReason": 0
-      },
-      {
-        "cost": 0,
-        "gradingResult": {
-          "pass": true,
-          "score": 1,
-          "reason": "All assertions passed",
-          "namedScores": {
-            "total_latency_ms_sum": 5875,
-            "total_latency_ms_count": 1,
-            "ttft_ms_sum": 5529,
-            "ttft_ms_count": 1,
-            "output_tokens_per_second_sum": 592.485549132948,
-            "output_tokens_per_second_count": 1,
-            "completion_tokens_sum": 205,
-            "completion_tokens_count": 1
-          },
-          "namedScoreWeights": {
-            "total_latency_ms_sum": 1,
-            "total_latency_ms_count": 1,
-            "ttft_ms_sum": 1,
-            "ttft_ms_count": 1,
-            "output_tokens_per_second_sum": 1,
-            "output_tokens_per_second_count": 1,
-            "completion_tokens_sum": 1,
-            "completion_tokens_count": 1
-          },
-          "tokensUsed": {
-            "total": 0,
-            "prompt": 0,
-            "completion": 0,
-            "cached": 0,
-            "numRequests": 0
-          },
-          "componentResults": [
-            {
-              "pass": true,
-              "score": 1,
-              "reason": "Collected benchmark metrics",
-              "namedScores": {
-                "total_latency_ms_sum": 5875,
-                "total_latency_ms_count": 1,
-                "ttft_ms_sum": 5529,
-                "ttft_ms_count": 1,
-                "output_tokens_per_second_sum": 592.485549132948,
-                "output_tokens_per_second_count": 1,
-                "completion_tokens_sum": 205,
-                "completion_tokens_count": 1
-              },
-              "namedScoreWeights": {
-                "total_latency_ms_sum": 1,
-                "total_latency_ms_count": 1,
-                "ttft_ms_sum": 1,
-                "ttft_ms_count": 1,
-                "output_tokens_per_second_sum": 1,
-                "output_tokens_per_second_count": 1,
-                "completion_tokens_sum": 1,
-                "completion_tokens_count": 1
-              },
-              "assertion": {
-                "type": "javascript",
-                "value": "file://./tests/metrics.js:benchmarkMetrics"
-              }
-            }
-          ]
-        },
-        "id": "0a67d9dd-2c14-4159-a683-866cf1b2189b",
-        "latencyMs": 5882,
-        "namedScores": {
-          "total_latency_ms_sum": 5875,
-          "total_latency_ms_count": 1,
-          "ttft_ms_sum": 5529,
-          "ttft_ms_count": 1,
-          "output_tokens_per_second_sum": 592.485549132948,
-          "output_tokens_per_second_count": 1,
-          "completion_tokens_sum": 205,
+          "completion_tokens_sum": 7510,
           "completion_tokens_count": 1
         },
         "prompt": {
@@ -1380,21 +1668,21 @@
           "label": "qwen3.5-flash united-states"
         },
         "response": {
-          "output": "*   Automated playbooks instantly isolate compromised endpoints to stop lateral movement before human analysts can even begin their initial investigation work.\n*   Security teams reduce mean time to detect threats by using scripts that continuously monitor logs for suspicious behavioral patterns daily.\n*   Incident response automation eliminates repetitive manual tasks, allowing skilled professionals to focus on complex threat hunting and strategic analysis efforts.\n*   Systems automatically enrich alerts with threat intelligence data, providing context that helps analysts prioritize critical incidents over false positive noise quickly.\n*   Organizations achieve consistent response actions across all environments by enforcing standardized procedures through pre-defined automated workflows without human error or delay.\n*   Real-time containment capabilities trigger immediate network segmentation when specific malware signatures are detected, preventing widespread data exfiltration during active attacks.\n*   Automated reporting tools generate detailed incident summaries immediately after resolution, ensuring compliance requirements are met without requiring additional manual documentation steps.\n*   Continuous improvement of security posture occurs as automation systems learn from past incidents to refine detection rules and update response strategies effectively.",
+          "output": "* Automation reduces manual effort by executing predefined security playbooks instantly whenever specific alerts trigger within your organization's entire network infrastructure.\n* Security teams save operational time by automating routine tasks like isolating infected endpoints from the corporate network immediately upon detection.\n* Integrating automated tools ensures consistent responses to threats, minimizing human error significantly during high-pressure situations involving critical data breaches effectively.\n* Real-time threat intelligence feeds allow systems to automatically block malicious IP addresses before attackers successfully compromise sensitive internal servers completely.\n* Automated ticketing systems streamline communication between analysts, ensuring every single incident is tracked and resolved according to strict compliance standards.\n* Organizations achieve faster mean time to resolution by using scripts that gather forensic evidence without requiring direct analyst intervention constantly.\n* Continuous monitoring platforms detect anomalies early, triggering automated containment procedures to limit potential damage across distributed cloud environments very efficiently.\n* Regularly updating automation playbooks keeps defenses effective against evolving cyber threats targeting modern enterprise digital infrastructure assets today fully secure.",
           "tokenUsage": {
-            "prompt": 45,
-            "completion": 205,
-            "total": 250
+            "prompt": 43,
+            "completion": 7510,
+            "total": 7553
           },
           "metadata": {
             "apiBaseUrl": "https://dashscope-us.aliyuncs.com/compatible-mode/v1",
             "region": "united-states",
             "model": "qwen3.5-flash",
-            "totalLatencyMs": 5875,
-            "ttftMs": 5529,
-            "completionTokenCount": 205,
+            "totalLatencyMs": 58501,
+            "ttftMs": 4617,
+            "completionTokenCount": 7510,
             "completionTokenCountSource": "usage",
-            "outputTokensPerSecond": 592.485549132948
+            "outputTokensPerSecond": 139.37346893326404
           }
         },
         "score": 1,
@@ -1421,11 +1709,11 @@
           "apiBaseUrl": "https://dashscope-us.aliyuncs.com/compatible-mode/v1",
           "region": "united-states",
           "model": "qwen3.5-flash",
-          "totalLatencyMs": 5875,
-          "ttftMs": 5529,
-          "completionTokenCount": 205,
+          "totalLatencyMs": 58501,
+          "ttftMs": 4617,
+          "completionTokenCount": 7510,
           "completionTokenCountSource": "usage",
-          "outputTokensPerSecond": 592.485549132948,
+          "outputTokensPerSecond": 139.37346893326404,
           "_promptfooFileMetadata": {}
         },
         "failureReason": 0
@@ -1434,13 +1722,13 @@
     "stats": {
       "successes": 8,
       "failures": 0,
-      "errors": 0,
+      "errors": 4,
       "tokenUsage": {
-        "prompt": 368,
-        "completion": 869,
+        "prompt": 352,
+        "completion": 49473,
         "cached": 0,
-        "total": 1237,
-        "numRequests": 8,
+        "total": 49825,
+        "numRequests": 12,
         "completionDetails": {
           "reasoning": 0,
           "acceptedPrediction": 0,
@@ -1463,8 +1751,8 @@
           }
         }
       },
-      "durationMs": 16197,
-      "evaluationDurationMs": 16197
+      "durationMs": 62197,
+      "evaluationDurationMs": 62197
     }
   },
   "config": {
@@ -1475,7 +1763,8 @@
     ],
     "providers": [
       "file://./providers/dashscope-sg.yaml",
-      "file://./providers/dashscope-us.yaml"
+      "file://./providers/dashscope-us.yaml",
+      "file://./providers/seetacloud-xgd.yaml"
     ],
     "tests": [
       "file://./tests/benchmark-cases.yaml"
@@ -1522,8 +1811,8 @@
     "nodeVersion": "v22.22.2",
     "platform": "linux",
     "arch": "x64",
-    "exportedAt": "2026-04-28T07:11:06.362Z",
-    "evaluationCreatedAt": "2026-04-28T07:10:50.056Z",
+    "exportedAt": "2026-04-28T10:02:08.735Z",
+    "evaluationCreatedAt": "2026-04-28T10:01:06.389Z",
     "author": "huangzixi@xgd.com"
   }
 }

@@ -1,8 +1,8 @@
 id: ./providers/dashscope-compatible.js
-label: qwen3.5-omni-plus singapore
+label: qwen3.5-flash singapore
 config:
   region: singapore
-  model: qwen3.5-omni-plus
+  model: qwen3.5-flash
   apiBaseUrl: https://dashscope-intl.aliyuncs.com/compatible-mode/v1
   apiKeyEnvar: DASHSCOPE_SG_API_KEY
   temperature: 0

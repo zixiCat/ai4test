@@ -1,0 +1,9 @@
+id: ./providers/dashscope-compatible.js
+label: qwen3.5 xgd local
+config:
+  region: xgd-local
+  model: qwen3.5
+  apiBaseUrl: https://u902158-sj5x-a9bfbe07.bjb1.seetacloud.com:8443/v1
+  apiKeyEnvar: SEETACLOUD_XGD_API_KEY
+  temperature: 0
+  max_tokens: 512

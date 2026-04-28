@@ -9,6 +9,7 @@ prompts:
 providers:
   - file://./providers/dashscope-sg.yaml
   - file://./providers/dashscope-us.yaml
+  - file://./providers/seetacloud-xgd.yaml
 
 tests:
   - file://./tests/benchmark-cases.yaml
