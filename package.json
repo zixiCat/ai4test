@@ -1,0 +1,14 @@
+{
+  "name": "ai4test",
+  "version": "1.0.0",
+  "description": "1. Set your API key (if using a cloud provider):",
+  "main": "index.js",
+  "scripts": {
+    "start": "promptfoo cache clear && promptfoo eval && promptfoo view"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "promptfoo": "^0.121.9"
+  }
+}

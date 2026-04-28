@@ -1,0 +1,3 @@
+Write one plain sentence about {{topic}}.
+Keep it between 18 and 28 words.
+Do not use markdown, quotes, or a list.

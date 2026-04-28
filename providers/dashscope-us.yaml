@@ -1,0 +1,9 @@
+id: ./providers/dashscope-compatible.js
+label: qwen3.5-flash united-states
+config:
+  region: united-states
+  model: qwen3.5-flash
+  apiBaseUrl: https://dashscope-us.aliyuncs.com/compatible-mode/v1
+  apiKeyEnvar: DASHSCOPE_US_API_KEY
+  temperature: 0
+  max_tokens: 512

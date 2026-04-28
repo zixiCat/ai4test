@@ -1,0 +1,3 @@
+Write 8 bullet points about {{topic}}.
+Each bullet must be 18 to 25 words.
+Do not add an introduction or conclusion.

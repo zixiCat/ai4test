@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+
+description: "DashScope OpenAI-compatible benchmark"
+
+prompts:
+  - file://./prompts/ttft.txt
+  - file://./prompts/token-speed.txt
+
+providers:
+  - file://./providers/dashscope-sg.yaml
+  - file://./providers/dashscope-us.yaml
+
+tests:
+  - file://./tests/benchmark-cases.yaml
+
+defaultTest: file://./tests/default-benchmark.yaml
+
+evaluateOptions:
+  maxConcurrency: 20
+  repeat: 1
+  cache: false
+
+commandLineOptions:
+  envPath: .env
+
+derivedMetrics:
+  - name: avg_total_latency_ms
+    value: total_latency_ms_sum / max(total_latency_ms_count, 1)
+  - name: avg_ttft_ms
+    value: ttft_ms_sum / max(ttft_ms_count, 1)
+  - name: avg_output_tokens_per_second
+    value: output_tokens_per_second_sum / max(output_tokens_per_second_count, 1)
+  - name: avg_completion_tokens
+    value: completion_tokens_sum / max(completion_tokens_count, 1)

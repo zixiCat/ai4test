@@ -1,0 +1,7 @@
+- description: technical topic
+  vars:
+    topic: API latency benchmarking
+
+- description: operational topic
+  vars:
+    topic: incident response automation

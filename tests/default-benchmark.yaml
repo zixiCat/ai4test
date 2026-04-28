@@ -1,0 +1,3 @@
+assert:
+  - type: javascript
+    value: file://./tests/metrics.js:benchmarkMetrics
