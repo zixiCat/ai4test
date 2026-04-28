@@ -1,3 +1,5 @@
+const OpenAI = require('openai');
+
 const DEFAULT_MAX_TOKENS = 512;
 
 function stripTrailingSlash(value) {
@@ -78,104 +80,32 @@ function parseErrorBody(body) {
   }
 }
 
-function extractResponseText(data) {
-  return extractText(
-    data.choices?.[0]?.message?.content ?? data.choices?.[0]?.text ?? data.output_text ?? data.output,
-  );
-}
-
-async function readEventStream(response) {
-  const reader = response.body.getReader();
-  const decoder = new TextDecoder();
-  let rawText = '';
-  let buffer = '';
+async function readChatCompletionStream(stream) {
   let output = '';
   let firstTokenAt;
   let tokenUsage;
-  let sawEventStream = false;
-
-  const applyPayload = (parsed) => {
-    const usage = normalizeUsage(parsed.usage);
+  for await (const chunk of stream) {
+    const usage = normalizeUsage(chunk.usage);
     if (usage) {
       tokenUsage = usage;
     }
 
-    const choice = parsed.choices?.[0];
-    const streamedReasoning = extractText(choice?.delta?.reasoning_content ?? parsed.reasoning_content);
-    const text = extractText(
-      choice?.delta?.content ??
-        choice?.message?.content ??
-        choice?.text ??
-        parsed.output_text ??
-        parsed.output,
-    );
+    const choice = chunk.choices?.[0];
+    const streamedReasoning = extractText(choice?.delta?.reasoning_content ?? chunk.reasoning_content);
+    const text = extractText(choice?.delta?.content ?? choice?.message?.content ?? choice?.text);
 
-    if (!firstTokenAt && (text || streamedReasoning)) {
+    if (!firstTokenAt) {
       firstTokenAt = Date.now();
     }
 
     if (!text) {
-      return;
+      continue;
     }
 
     output += text;
-  };
-
-  const processEvent = (rawEvent) => {
-    const dataLines = [];
-
-    for (const line of rawEvent.split('\n')) {
-      if (!line.startsWith('data:')) {
-        continue;
-      }
-
-      const data = line.slice(5).trim();
-      if (!data || data === '[DONE]') {
-        continue;
-      }
-
-      sawEventStream = true;
-      dataLines.push(data);
-    }
-
-    if (!dataLines.length) {
-      return;
-    }
-
-    let parsed;
-    try {
-      parsed = JSON.parse(dataLines.join('\n'));
-    } catch {
-      return;
-    }
-
-    applyPayload(parsed);
-  };
-
-  while (true) {
-    const { done, value } = await reader.read();
-    const chunk = done ? decoder.decode() : decoder.decode(value, { stream: true });
-
-    rawText += chunk;
-    buffer += chunk.replace(/\r\n/g, '\n');
-
-    let delimiterIndex = buffer.indexOf('\n\n');
-    while (delimiterIndex !== -1) {
-      const rawEvent = buffer.slice(0, delimiterIndex);
-      buffer = buffer.slice(delimiterIndex + 2);
-      processEvent(rawEvent);
-      delimiterIndex = buffer.indexOf('\n\n');
-    }
-
-    if (done) {
-      if (buffer.trim()) {
-        processEvent(buffer);
-      }
-      break;
-    }
   }
 
-  return { output, firstTokenAt, tokenUsage, rawText, sawEventStream };
+  return { output, firstTokenAt, tokenUsage };
 }
 
 module.exports = class DashScopeCompatibleProvider {
@@ -222,6 +152,7 @@ module.exports = class DashScopeCompatibleProvider {
       stream: true,
       max_tokens: this.config.max_tokens ?? DEFAULT_MAX_TOKENS,
       stream_options: { include_usage: true },
+      enable_thinking: false,
     };
 
     if (typeof this.config.temperature === 'number') {
@@ -232,55 +163,30 @@ module.exports = class DashScopeCompatibleProvider {
       Object.assign(requestBody, this.config.passthrough);
     }
 
+    const client = new OpenAI({
+      apiKey,
+      baseURL: apiBaseUrl,
+      defaultHeaders: this.config.headers || {},
+    });
+
     const startedAt = Date.now();
-
-    let response;
-    try {
-      response = await fetch(`${apiBaseUrl}/chat/completions`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${apiKey}`,
-          ...(this.config.headers || {}),
-        },
-        body: JSON.stringify(requestBody),
-      });
-    } catch (error) {
-      return {
-        error: `Request failed for ${this.providerId}: ${error.message}`,
-      };
-    }
-
-    if (!response.ok) {
-      const body = await response.text();
-      return {
-        error: `Request failed with ${response.status} ${response.statusText}: ${parseErrorBody(body)}`,
-      };
-    }
 
     let output = '';
     let firstTokenAt;
     let tokenUsage;
 
     try {
-      if (response.body) {
-        const streamed = await readEventStream(response);
-
-        if (streamed.sawEventStream) {
-          ({ output, firstTokenAt, tokenUsage } = streamed);
-        } else {
-          const data = JSON.parse(streamed.rawText);
-          output = extractResponseText(data);
-          tokenUsage = normalizeUsage(data.usage);
-        }
-      } else {
-        const data = await response.json();
-        output = extractResponseText(data);
-        tokenUsage = normalizeUsage(data.usage);
-      }
+      const stream = await client.chat.completions.create(requestBody);
+      ({ output, firstTokenAt, tokenUsage } = await readChatCompletionStream(stream));
     } catch (error) {
+      if (typeof error?.status === 'number') {
+        return {
+          error: `Request failed with ${error.status}${error.statusText ? ` ${error.statusText}` : ''}: ${parseErrorBody(error.message)}`,
+        };
+      }
+
       return {
-        error: `Failed to parse response from ${this.providerId}: ${error.message}`,
+        error: `Request failed for ${this.providerId}: ${error.message}`,
       };
     }
 

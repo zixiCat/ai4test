@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "openai": "^6.34.0",
     "promptfoo": "^0.121.9"
   }
 }
