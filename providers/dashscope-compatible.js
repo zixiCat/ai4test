@@ -84,6 +84,7 @@ async function readChatCompletionStream(stream) {
   let output = '';
   let firstTokenAt;
   let tokenUsage;
+  let textChunkCount = 0;
   for await (const chunk of stream) {
     const usage = normalizeUsage(chunk.usage);
     if (usage) {
@@ -102,10 +103,15 @@ async function readChatCompletionStream(stream) {
       continue;
     }
 
+    textChunkCount++;
     output += text;
   }
 
-  return { output, firstTokenAt, tokenUsage };
+  // Tokens/sec is only meaningful when the endpoint truly streams (multiple chunks).
+  // A single-chunk response means firstTokenAt ≈ finishedAt, which would produce
+  // an absurdly large tokens/sec value.
+  const isStreaming = textChunkCount > 1;
+  return { output, firstTokenAt, tokenUsage, isStreaming };
 }
 
 module.exports = class DashScopeCompatibleProvider {
@@ -174,10 +180,11 @@ module.exports = class DashScopeCompatibleProvider {
     let output = '';
     let firstTokenAt;
     let tokenUsage;
+    let isStreaming = false;
 
     try {
       const stream = await client.chat.completions.create(requestBody);
-      ({ output, firstTokenAt, tokenUsage } = await readChatCompletionStream(stream));
+      ({ output, firstTokenAt, tokenUsage, isStreaming } = await readChatCompletionStream(stream));
     } catch (error) {
       if (typeof error?.status === 'number') {
         return {
@@ -196,7 +203,12 @@ module.exports = class DashScopeCompatibleProvider {
     const generationDurationSeconds = firstTokenAt
       ? Math.max((finishedAt - firstTokenAt) / 1000, 0.001)
       : Math.max(totalLatencyMs / 1000, 0.001);
-    const outputTokensPerSecond = completionTokenCount / generationDurationSeconds;
+    // Only report tokens/sec when we confirmed the endpoint is truly streaming.
+    // A non-streaming single-chunk response gives generationDuration ≈ 0,
+    // which would produce a meaninglessly large value.
+    const outputTokensPerSecond = isStreaming
+      ? completionTokenCount / generationDurationSeconds
+      : undefined;
 
     return {
       output,
