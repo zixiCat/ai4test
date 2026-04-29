@@ -76,7 +76,7 @@ Recommended capability split:
 
 This gives us one coherent stack instead of one vendor for text, one vendor for ASR, and another vendor for TTS.
 
-## Model Performance
+## Text Model Performance
 
 ### How I Read These Metrics
 
@@ -149,6 +149,8 @@ That is why I recommend DashScope Singapore plus Omni-Plus as the main productio
 
 I am located in China, but our product serves the United States market. If I only test from my local network, the latency numbers will include too much local cross-border noise and will not reflect the real production path.
 
+The benchmark results in this memo were collected from a US-based Vast.ai Linux server. I used that runner on purpose so the network path was closer to a US production deployment than to my own local network in China.
+
 To reduce that distortion, I used:
 
 - Promptfoo for repeatable multi-provider benchmarking
@@ -158,21 +160,98 @@ This setup is not perfect, but it is much more production-like than testing only
 
 It also helped answer the most important deployment question in this memo: even from a US-based runner, the Singapore DashScope endpoint performed better than the tested US DashScope endpoint, so Singapore is the better service choice for now.
 
+### What I Tested
+
+I tested three benchmark groups in this workspace:
+
+- Text benchmark: `promptfooconfig.yaml` with `prompts/ttft.txt` and `prompts/token-speed.txt` across the configured Singapore DashScope, US DashScope, OpenRouter, and local XGD providers.
+- ASR benchmark: `promptfoo.asr.yaml` with `prompts/asr.txt` and `tests/asr-benchmark-cases.yaml`, which currently transcribes the official DashScope `welcome.mp3` sample through the `qwen3-asr-flash singapore` provider.
+- TTS benchmark: `promptfoo.tts.yaml` with `prompts/tts.txt` and `tests/tts-benchmark-cases.yaml`, which currently synthesizes one short English sample and one longer Chinese sample with the `Cherry` voice through the `qwen3-tts-flash singapore` provider.
+
+### How To Reproduce
+
+If you want numbers that are comparable to this memo, run the benchmark from a US-based server rather than from my local China network. The point is to keep the network path close to the real US production path.
+
+1. Prepare a US-based Linux runner, for example a Vast.ai instance in the United States.
+2. Put the required API keys in `.env`. For this workspace that can include `DASHSCOPE_SG_API_KEY`, `DASHSCOPE_US_API_KEY`, `OPENROUTER_API_KEY`, and `SEETACLOUD_XGD_API_KEY`, depending on which providers you want active.
+3. Run `npm run start:text` for the text benchmark.
+4. Run `npm run start:asr` for the ASR benchmark.
+5. Run `npm run start:tts` for the TTS benchmark.
+6. Review the generated `.promptfoo-output.json`, `.promptfoo-output.asr.json`, and `.promptfoo-output.tts.json` files, or read the aggregated terminal summary printed by `node scripts/report.js`.
+
 ### Benchmark Design
 
-The benchmark used two simple prompts:
+The benchmark used:
 
-- A short-response prompt to expose TTFT behavior
-- A longer-response prompt to expose streaming speed and output-length behavior
+- Two text prompts: one short-response TTFT prompt and one longer token-speed prompt
+- One ASR transcription case against the official DashScope welcome sample audio
+- Two TTS synthesis cases: one short English line and one longer Chinese paragraph
 
-This does not fully measure translation quality, tool-calling accuracy, or speech quality. What it does measure well is platform responsiveness and behavior under comparable prompt shapes.
+This round measures platform responsiveness and streaming behavior across text, ASR, and TTS. It does not yet fully measure translation quality, tool-calling accuracy, transcript accuracy on domain audio, or speech naturalness.
 
 For the next round, we should add business-specific prompts for:
 
 - Real translation samples
 - Customer-service chat turns
 - Tool-calling and command invocation
-- Speech input and speech output evaluation
+- Domain-specific speech recordings with accents, noise, and longer utterances
+- Human or automated quality evaluation for TTS output
+
+## Speech Benchmark Snapshot
+
+The speech report blocks below were generated from the cached Promptfoo outputs in this workspace, using the same reporting script as the text benchmark.
+
+### ASR Report
+
+Current ASR test scope:
+
+- Provider: `qwen3-asr-flash singapore`
+- Prompt: `prompts/asr.txt`
+- Input case: the official DashScope `welcome.mp3` sample referenced by `tests/asr-benchmark-cases.yaml`
+
+| Provider                  | Prompt          | Avg total latency | Avg TTFT | Avg tokens/sec | Avg completion tokens |
+| ------------------------- | --------------- | ----------------: | -------: | -------------: | --------------------: |
+| qwen3-asr-flash singapore | prompts/asr.txt |           1333 ms |  1270 ms |          190.5 |                    12 |
+
+Raw aggregated report:
+
+```text
+Provider : qwen3-asr-flash singapore
+Prompt   : prompts/asr.txt
+	avg total latency           : 1333 ms
+	avg TTFT                    : 1270 ms
+	avg tokens/sec              : 190.5 tok/s
+	avg completion tokens       : 12 tokens
+```
+
+This ASR run is mainly a latency and responsiveness check. It is not yet a broad accuracy study across accents, background noise, or business-specific audio.
+
+### TTS Report
+
+Current TTS test scope:
+
+- Provider: `qwen3-tts-flash singapore`
+- Prompt: `prompts/tts.txt`
+- Input cases: the English and Chinese examples defined in `tests/tts-benchmark-cases.yaml`
+- Voice: `Cherry`
+
+| Provider                  | Prompt          | Avg total latency | Avg TTFT | Avg audio bytes/sec | Avg audio bytes | Avg input characters |
+| ------------------------- | --------------- | ----------------: | -------: | ------------------: | --------------: | -------------------: |
+| qwen3-tts-flash singapore | prompts/tts.txt |         2819.5 ms |   778 ms |            282284.4 |          564524 |                 79.5 |
+
+Raw aggregated report:
+
+```text
+Provider : qwen3-tts-flash singapore
+Prompt   : prompts/tts.txt
+	avg total latency           : 2819.5 ms
+	avg TTFT                    : 778 ms
+	avg audio bytes/sec         : 282284.4 B/s
+	avg audio bytes             : 564524 bytes
+	avg input characters        : 79.5 chars
+```
+
+This TTS run is mainly a synthesis latency and throughput snapshot. It is not yet a listening-quality evaluation for naturalness, pronunciation, or style control.
 
 ## Why I Am Not Choosing GLM, DeepSeek, Kimi, GPT, or Gemini Platform as the Main Stack
 
