@@ -5,3 +5,7 @@
 - description: operational topic
   vars:
     topic: incident response automation
+
+- description: product topic
+  vars:
+    topic: product launch messaging
