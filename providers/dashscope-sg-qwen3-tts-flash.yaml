@@ -1,0 +1,9 @@
+id: ./providers/dashscope-tts.js
+label: qwen3-tts-flash singapore
+config:
+  region: singapore
+  model: qwen3-tts-flash
+  apiBaseUrl: https://dashscope-intl.aliyuncs.com/api/v1
+  apiKeyEnvar: DASHSCOPE_SG_API_KEY
+  stream: true
+  voice: Cherry

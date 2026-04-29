@@ -14,6 +14,16 @@ function metricCount(value) {
   return value === undefined ? 0 : 1;
 }
 
+const METRIC_DEFINITIONS = [
+  ['totalLatencyMs', 'total_latency_ms'],
+  ['ttftMs', 'ttft_ms'],
+  ['outputTokensPerSecond', 'output_tokens_per_second'],
+  ['completionTokenCount', 'completion_tokens'],
+  ['audioBytesPerSecond', 'audio_bytes_per_second'],
+  ['audioByteCount', 'audio_bytes'],
+  ['inputCharacterCount', 'input_characters'],
+];
+
 function buildMetricResult(namedScores) {
   const namedScoreWeights = Object.fromEntries(
     Object.keys(namedScores).map((metricName) => [metricName, 1]),
@@ -29,21 +39,15 @@ function buildMetricResult(namedScores) {
 }
 
 function benchmarkMetrics(_output, context) {
-  const totalLatencyMs = metadataValue(context, 'totalLatencyMs');
-  const ttftMs = metadataValue(context, 'ttftMs');
-  const outputTokensPerSecond = metadataValue(context, 'outputTokensPerSecond');
-  const completionTokenCount = metadataValue(context, 'completionTokenCount');
+  const namedScores = {};
 
-  return buildMetricResult({
-    total_latency_ms_sum: metricOrZero(totalLatencyMs),
-    total_latency_ms_count: metricCount(totalLatencyMs),
-    ttft_ms_sum: metricOrZero(ttftMs),
-    ttft_ms_count: metricCount(ttftMs),
-    output_tokens_per_second_sum: metricOrZero(outputTokensPerSecond),
-    output_tokens_per_second_count: metricCount(outputTokensPerSecond),
-    completion_tokens_sum: metricOrZero(completionTokenCount),
-    completion_tokens_count: metricCount(completionTokenCount),
-  });
+  for (const [metadataKey, metricKey] of METRIC_DEFINITIONS) {
+    const value = metadataValue(context, metadataKey);
+    namedScores[`${metricKey}_sum`] = metricOrZero(value);
+    namedScores[`${metricKey}_count`] = metricCount(value);
+  }
+
+  return buildMetricResult(namedScores);
 }
 
 module.exports = {

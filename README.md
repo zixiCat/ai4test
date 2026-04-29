@@ -1,78 +1,76 @@
-# Promptfoo OpenAI-compatible benchmark
+# Promptfoo DashScope benchmarks
 
-This workspace compares two OpenAI-compatible DashScope endpoints for the same model.
-The config is split across separate prompt, provider, and test files so it is easier to maintain.
+This workspace benchmarks DashScope text, ASR, and TTS models with Promptfoo.
+Text uses `providers/dashscope-compatible.js`, while ASR and TTS use dedicated provider files so the original text provider stays isolated.
 
 ## Quick start
 
-1. Put API keys in `.env`.
+1. Put your API keys in `.env`.
 
 ```bash
 DASHSCOPE_SG_API_KEY=sk-...
 DASHSCOPE_US_API_KEY=sk-...
 ```
 
-2. Adjust the model or base URLs in `providers/dashscope-sg.yaml` and `providers/dashscope-us.yaml`.
-
-3. Validate the config.
+2. Validate the configs.
 
 ```bash
 npm run validate
+npm run validate:asr
+npm run validate:tts
 ```
 
-4. Run the benchmark.
+3. Run the benchmark you need.
 
 ```bash
-npm run eval
+npm run start
+npm run start:asr
+npm run start:tts
 ```
 
-5. Open the web UI.
+Each command writes a `.promptfoo-output*.json` file and prints an aggregated terminal report.
 
-```bash
-npm run view
-```
+## Available benchmark configs
 
-## OpenAI-compatible provider usage
+- `promptfooconfig.yaml`: existing text/chat benchmark for OpenAI-compatible DashScope endpoints.
+- `promptfoo.asr.yaml`: Qwen3 ASR benchmark using `input_audio` requests over the OpenAI-compatible chat-completions API.
+- `promptfoo.tts.yaml`: Qwen3 TTS benchmark using DashScope SSE audio streaming.
 
-If you only need normal Promptfoo behavior, you can point the built-in OpenAI provider at a compatible endpoint like this:
+## Metrics
 
-```yaml
-providers:
-	- id: openai:chat:qwen3.5-flash
-		label: dashscope-sg
-		config:
-			apiBaseUrl: https://dashscope-intl.aliyuncs.com/compatible-mode/v1
-			apiKeyEnvar: DASHSCOPE_SG_API_KEY
-			temperature: 0
-			max_tokens: 512
-```
+Text and ASR benchmarks report these averages:
 
-That is enough for output, cost, and end-to-end latency.
+- `avg_total_latency_ms`
+- `avg_ttft_ms`
+- `avg_output_tokens_per_second`
+- `avg_completion_tokens`
 
-This repo uses `providers/dashscope-compatible.js` instead, because Promptfoo's built-in OpenAI provider does not currently expose TTFT and output tokens per second as first-class metrics.
+TTS benchmarks report these averages:
+
+- `avg_total_latency_ms`
+- `avg_ttft_ms`
+- `avg_audio_bytes_per_second`
+- `avg_audio_bytes`
+- `avg_input_characters`
+
+The benchmark metrics are emitted as `namedScores` from `tests/metrics.js`, which avoids Promptfoo's assertion-weight aggregation issue for benchmark-only metrics.
 
 ## File layout
 
-- `promptfooconfig.yaml` wires the benchmark together.
-- `prompts/` holds the short-response and long-response prompt variants.
-- `providers/` contains one provider file per endpoint plus the shared JS provider.
-- `tests/benchmark-cases.yaml` contains the topics to run.
-- `tests/default-benchmark.yaml` and `tests/metrics.js` emit benchmark metrics through `namedScores`, which Promptfoo then uses for derived metrics.
+- `prompts/` contains the text prompt, ASR instruction prompt, and TTS source-text prompt.
+- `providers/` contains per-model YAML files plus the shared custom provider.
+- `tests/default-benchmark.yaml` attaches the metric assertion.
+- `tests/benchmark-cases.yaml`, `tests/asr-benchmark-cases.yaml`, and `tests/tts-benchmark-cases.yaml` define the benchmark inputs.
 
-## Metrics in this setup
+## Notes
 
-- `avg_total_latency_ms`: average end-to-end latency measured by the custom provider.
-- `avg_ttft_ms`: average time to first streamed token, including reasoning chunks when the model streams them before visible answer text.
-- `avg_output_tokens_per_second`: average output throughput.
-- `avg_completion_tokens`: average output token count used for throughput calculations.
-
-The benchmark metrics are emitted as `namedScores` from a JavaScript assertion instead of using assertion-level `metric` with `weight: 0`, because Promptfoo 0.121.8 applies the assertion weight during metric aggregation.
-
-When the endpoint does not return usage data in the stream, the provider falls back to a simple character-based token estimate for throughput so the comparison still works.
+- The ASR benchmark ships with the official DashScope sample audio URL. Replace `audio_url` in `tests/asr-benchmark-cases.yaml` with your own files when needed.
+- The TTS benchmark defaults to the `Cherry` voice on the Singapore HTTP API. Override `voice`, `language_type`, or the text cases in `tests/tts-benchmark-cases.yaml` as needed.
+- When usage data is missing from a streamed text response, the provider falls back to a simple character-based token estimate so throughput still stays comparable.
 
 ## Learn more
 
 - Configuration guide: https://promptfoo.dev/docs/configuration/guide
-- OpenAI provider docs: https://www.promptfoo.dev/docs/providers/openai/
-- Assertions and metrics: https://promptfoo.dev/docs/configuration/expected-outputs/
 - Custom JavaScript providers: https://www.promptfoo.dev/docs/providers/custom-api/
+- Alibaba Cloud streaming docs: https://www.alibabacloud.com/help/en/model-studio/stream
+- Alibaba Cloud Qwen TTS docs: https://www.alibabacloud.com/help/en/model-studio/qwen-tts

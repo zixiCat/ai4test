@@ -1,0 +1,10 @@
+id: ./providers/dashscope-asr.js
+label: qwen3-asr-flash singapore
+config:
+  region: singapore
+  model: qwen3-asr-flash
+  apiBaseUrl: https://dashscope-intl.aliyuncs.com/compatible-mode/v1
+  apiKeyEnvar: DASHSCOPE_SG_API_KEY
+  stream: true
+  asrOptions:
+    enable_itn: false

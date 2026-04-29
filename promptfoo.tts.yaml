@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+
+description: "DashScope Qwen3 TTS benchmark"
+
+prompts:
+  - file://./prompts/tts.txt
+
+providers:
+  - file://./providers/dashscope-sg-qwen3-tts-flash.yaml
+
+tests:
+  - file://./tests/tts-benchmark-cases.yaml
+
+defaultTest: file://./tests/default-benchmark.yaml
+
+evaluateOptions:
+  maxConcurrency: 5
+  repeat: 1
+  cache: false
+
+commandLineOptions:
+  envPath: .env
+
+derivedMetrics:
+  - name: avg_total_latency_ms
+    value: total_latency_ms_sum / max(total_latency_ms_count, 1)
+  - name: avg_ttft_ms
+    value: ttft_ms_sum / max(ttft_ms_count, 1)
+  - name: avg_audio_bytes_per_second
+    value: audio_bytes_per_second_sum / max(audio_bytes_per_second_count, 1)
+  - name: avg_audio_bytes
+    value: audio_bytes_sum / max(audio_bytes_count, 1)
+  - name: avg_input_characters
+    value: input_characters_sum / max(input_characters_count, 1)

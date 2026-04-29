@@ -1,0 +1,374 @@
+{
+  "evalId": "eval-64B-2026-04-28T12:42:31",
+  "results": {
+    "version": 3,
+    "timestamp": "2026-04-28T12:42:31.350Z",
+    "prompts": [
+      {
+        "raw": "Transcribe the provided audio as faithfully as possible.",
+        "label": "prompts/asr.txt: Transcribe the provided audio as faithfully as possible.",
+        "id": "870a8d384b5c1da06f18cd72f301b1103d973b4ce6df339ef1fe6399dd1e7048",
+        "provider": "qwen3-asr-flash singapore",
+        "metrics": {
+          "score": 1,
+          "testPassCount": 1,
+          "testFailCount": 0,
+          "testErrorCount": 0,
+          "assertPassCount": 1,
+          "assertFailCount": 0,
+          "totalLatencyMs": 1339,
+          "tokenUsage": {
+            "prompt": 42,
+            "completion": 12,
+            "cached": 0,
+            "total": 54,
+            "numRequests": 1,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "namedScores": {
+            "total_latency_ms_sum": 1333,
+            "total_latency_ms_count": 1,
+            "ttft_ms_sum": 1270,
+            "ttft_ms_count": 1,
+            "output_tokens_per_second_sum": 190.47619047619048,
+            "output_tokens_per_second_count": 1,
+            "completion_tokens_sum": 12,
+            "completion_tokens_count": 1,
+            "audio_bytes_per_second_sum": 0,
+            "audio_bytes_per_second_count": 0,
+            "audio_bytes_sum": 0,
+            "audio_bytes_count": 0,
+            "input_characters_sum": 0,
+            "input_characters_count": 0,
+            "avg_total_latency_ms": 1333,
+            "avg_ttft_ms": 1270,
+            "avg_output_tokens_per_second": 190.47619047619048,
+            "avg_completion_tokens": 12
+          },
+          "namedScoresCount": {
+            "total_latency_ms_sum": 1,
+            "total_latency_ms_count": 1,
+            "ttft_ms_sum": 1,
+            "ttft_ms_count": 1,
+            "output_tokens_per_second_sum": 1,
+            "output_tokens_per_second_count": 1,
+            "completion_tokens_sum": 1,
+            "completion_tokens_count": 1,
+            "audio_bytes_per_second_sum": 1,
+            "audio_bytes_per_second_count": 1,
+            "audio_bytes_sum": 1,
+            "audio_bytes_count": 1,
+            "input_characters_sum": 1,
+            "input_characters_count": 1
+          },
+          "namedScoreWeights": {
+            "total_latency_ms_sum": 1,
+            "total_latency_ms_count": 1,
+            "ttft_ms_sum": 1,
+            "ttft_ms_count": 1,
+            "output_tokens_per_second_sum": 1,
+            "output_tokens_per_second_count": 1,
+            "completion_tokens_sum": 1,
+            "completion_tokens_count": 1,
+            "audio_bytes_per_second_sum": 1,
+            "audio_bytes_per_second_count": 1,
+            "audio_bytes_sum": 1,
+            "audio_bytes_count": 1,
+            "input_characters_sum": 1,
+            "input_characters_count": 1
+          },
+          "cost": 0
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {
+            "total_latency_ms_sum": 1333,
+            "total_latency_ms_count": 1,
+            "ttft_ms_sum": 1270,
+            "ttft_ms_count": 1,
+            "output_tokens_per_second_sum": 190.47619047619048,
+            "output_tokens_per_second_count": 1,
+            "completion_tokens_sum": 12,
+            "completion_tokens_count": 1,
+            "audio_bytes_per_second_sum": 0,
+            "audio_bytes_per_second_count": 0,
+            "audio_bytes_sum": 0,
+            "audio_bytes_count": 0,
+            "input_characters_sum": 0,
+            "input_characters_count": 0
+          },
+          "namedScoreWeights": {
+            "total_latency_ms_sum": 1,
+            "total_latency_ms_count": 1,
+            "ttft_ms_sum": 1,
+            "ttft_ms_count": 1,
+            "output_tokens_per_second_sum": 1,
+            "output_tokens_per_second_count": 1,
+            "completion_tokens_sum": 1,
+            "completion_tokens_count": 1,
+            "audio_bytes_per_second_sum": 1,
+            "audio_bytes_per_second_count": 1,
+            "audio_bytes_sum": 1,
+            "audio_bytes_count": 1,
+            "input_characters_sum": 1,
+            "input_characters_count": 1
+          },
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Collected benchmark metrics",
+              "namedScores": {
+                "total_latency_ms_sum": 1333,
+                "total_latency_ms_count": 1,
+                "ttft_ms_sum": 1270,
+                "ttft_ms_count": 1,
+                "output_tokens_per_second_sum": 190.47619047619048,
+                "output_tokens_per_second_count": 1,
+                "completion_tokens_sum": 12,
+                "completion_tokens_count": 1,
+                "audio_bytes_per_second_sum": 0,
+                "audio_bytes_per_second_count": 0,
+                "audio_bytes_sum": 0,
+                "audio_bytes_count": 0,
+                "input_characters_sum": 0,
+                "input_characters_count": 0
+              },
+              "namedScoreWeights": {
+                "total_latency_ms_sum": 1,
+                "total_latency_ms_count": 1,
+                "ttft_ms_sum": 1,
+                "ttft_ms_count": 1,
+                "output_tokens_per_second_sum": 1,
+                "output_tokens_per_second_count": 1,
+                "completion_tokens_sum": 1,
+                "completion_tokens_count": 1,
+                "audio_bytes_per_second_sum": 1,
+                "audio_bytes_per_second_count": 1,
+                "audio_bytes_sum": 1,
+                "audio_bytes_count": 1,
+                "input_characters_sum": 1,
+                "input_characters_count": 1
+              },
+              "assertion": {
+                "type": "javascript",
+                "value": "file://./tests/metrics.js:benchmarkMetrics"
+              }
+            }
+          ]
+        },
+        "id": "d9a937a0-2acb-4af9-bfb1-80b65210789a",
+        "latencyMs": 1339,
+        "namedScores": {
+          "total_latency_ms_sum": 1333,
+          "total_latency_ms_count": 1,
+          "ttft_ms_sum": 1270,
+          "ttft_ms_count": 1,
+          "output_tokens_per_second_sum": 190.47619047619048,
+          "output_tokens_per_second_count": 1,
+          "completion_tokens_sum": 12,
+          "completion_tokens_count": 1,
+          "audio_bytes_per_second_sum": 0,
+          "audio_bytes_per_second_count": 0,
+          "audio_bytes_sum": 0,
+          "audio_bytes_count": 0,
+          "input_characters_sum": 0,
+          "input_characters_count": 0
+        },
+        "prompt": {
+          "raw": "Transcribe the provided audio as faithfully as possible.",
+          "label": "prompts/asr.txt: Transcribe the provided audio as faithfully as possible.",
+          "config": {}
+        },
+        "promptId": "870a8d384b5c1da06f18cd72f301b1103d973b4ce6df339ef1fe6399dd1e7048",
+        "promptIdx": 0,
+        "provider": {
+          "id": "./providers/dashscope-asr.js",
+          "label": "qwen3-asr-flash singapore"
+        },
+        "response": {
+          "output": "欢迎使用阿里云。",
+          "tokenUsage": {
+            "prompt": 42,
+            "completion": 12,
+            "total": 54
+          },
+          "metadata": {
+            "apiBaseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+            "region": "singapore",
+            "model": "qwen3-asr-flash",
+            "requestType": "asr",
+            "totalLatencyMs": 1333,
+            "ttftMs": 1270,
+            "completionTokenCount": 12,
+            "completionTokenCountSource": "usage",
+            "outputTokensPerSecond": 190.47619047619048
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "official welcome sample",
+          "vars": {
+            "audio_url": "https://dashscope.oss-cn-beijing.aliyuncs.com/audios/welcome.mp3"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://./tests/metrics.js:benchmarkMetrics"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "vars": {
+          "audio_url": "https://dashscope.oss-cn-beijing.aliyuncs.com/audios/welcome.mp3"
+        },
+        "metadata": {
+          "apiBaseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+          "region": "singapore",
+          "model": "qwen3-asr-flash",
+          "requestType": "asr",
+          "totalLatencyMs": 1333,
+          "ttftMs": 1270,
+          "completionTokenCount": 12,
+          "completionTokenCountSource": "usage",
+          "outputTokensPerSecond": 190.47619047619048,
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      }
+    ],
+    "stats": {
+      "successes": 1,
+      "failures": 0,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 42,
+        "completion": 12,
+        "cached": 0,
+        "total": 54,
+        "numRequests": 1,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "durationMs": 2069,
+      "evaluationDurationMs": 2069
+    }
+  },
+  "config": {
+    "tags": {},
+    "description": "DashScope Qwen3 ASR benchmark",
+    "prompts": [
+      "file:///root/zpace/code/xgd/ai4test/prompts/asr.txt"
+    ],
+    "providers": [
+      "file://./providers/dashscope-sg-qwen3-asr-flash.yaml"
+    ],
+    "tests": [
+      "file://./tests/asr-benchmark-cases.yaml"
+    ],
+    "scenarios": [],
+    "env": {},
+    "defaultTest": {
+      "assert": [
+        {
+          "type": "javascript",
+          "value": "file://./tests/metrics.js:benchmarkMetrics"
+        }
+      ]
+    },
+    "derivedMetrics": [
+      {
+        "name": "avg_total_latency_ms",
+        "value": "total_latency_ms_sum / max(total_latency_ms_count, 1)"
+      },
+      {
+        "name": "avg_ttft_ms",
+        "value": "ttft_ms_sum / max(ttft_ms_count, 1)"
+      },
+      {
+        "name": "avg_output_tokens_per_second",
+        "value": "output_tokens_per_second_sum / max(output_tokens_per_second_count, 1)"
+      },
+      {
+        "name": "avg_completion_tokens",
+        "value": "completion_tokens_sum / max(completion_tokens_count, 1)"
+      }
+    ],
+    "outputPath": [
+      ".promptfoo-output.asr.json"
+    ],
+    "extensions": [],
+    "metadata": {},
+    "evaluateOptions": {
+      "maxConcurrency": 5,
+      "repeat": 1,
+      "cache": false
+    }
+  },
+  "shareableUrl": null,
+  "metadata": {
+    "promptfooVersion": "0.121.9",
+    "nodeVersion": "v22.22.2",
+    "platform": "linux",
+    "arch": "x64",
+    "exportedAt": "2026-04-28T12:42:33.452Z",
+    "evaluationCreatedAt": "2026-04-28T12:42:31.350Z",
+    "author": "huangzixi@xgd.com"
+  }
+}

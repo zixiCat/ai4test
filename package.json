@@ -4,7 +4,9 @@
   "description": "1. Set your API key (if using a cloud provider):",
   "main": "index.js",
   "scripts": {
-    "start": "promptfoo cache clear && promptfoo eval --output .promptfoo-output.json && node scripts/report.js"
+    "start:text": "promptfoo cache clear && promptfoo eval -c promptfooconfig.yaml --output .promptfoo-output.json && node scripts/report.js .promptfoo-output.json",
+    "start:asr": "promptfoo cache clear && promptfoo eval -c promptfoo.asr.yaml --output .promptfoo-output.asr.json && node scripts/report.js .promptfoo-output.asr.json",
+    "start:tts": "promptfoo cache clear && promptfoo eval -c promptfoo.tts.yaml --output .promptfoo-output.tts.json && node scripts/report.js .promptfoo-output.tts.json"
   },
   "author": "",
   "license": "ISC",
