@@ -1,0 +1,82 @@
+
+────────────────────────────────────────────────────────────
+  Benchmark Named Scores
+────────────────────────────────────────────────────────────
+
+  Provider : qwen3.5-flash singapore
+  Prompt   : prompts/ttft.txt
+    avg total latency           : 41115 ms
+    avg TTFT                    : 6138.5 ms
+    avg tokens/sec              : 131.0 tok/s
+    avg completion tokens       : 4559 tokens
+
+  Provider : qwen3.5-flash singapore
+  Prompt   : prompts/token-speed.txt
+    avg total latency           : 49848 ms
+    avg TTFT                    : 618 ms
+    avg tokens/sec              : 123.7 tok/s
+    avg completion tokens       : 6089 tokens
+    error                       : 1/2 failed - Request timed out.
+
+  Provider : qwen3.5-omni-flash singapore
+  Prompt   : prompts/ttft.txt
+    avg total latency           : 11993 ms
+    avg TTFT                    : 11890 ms
+    avg tokens/sec              : 207.4 tok/s
+    avg completion tokens       : 21 tokens
+
+  Provider : qwen3.5-omni-flash singapore
+  Prompt   : prompts/token-speed.txt
+    avg total latency           : 2019 ms
+    avg TTFT                    : 684 ms
+    avg tokens/sec              : 145.3 tok/s
+    avg completion tokens       : 194 tokens
+    error                       : 1/2 failed - Request timed out.
+
+  Provider : qwen3.5-omni-plus singapore
+  Prompt   : prompts/ttft.txt
+    avg total latency           : 12202 ms
+    avg TTFT                    : 11709 ms
+    avg tokens/sec              : 48.7 tok/s
+    avg completion tokens       : 24 tokens
+    error                       : 1/2 failed - Request timed out.
+
+  Provider : qwen3.5-omni-plus singapore
+  Prompt   : prompts/token-speed.txt
+    avg total latency           : 51589 ms
+    avg TTFT                    : 33708.5 ms
+    avg tokens/sec              : 32.3 tok/s
+    avg completion tokens       : 177 tokens
+
+  Provider : qwen3.5-flash united-states
+  Prompt   : prompts/ttft.txt
+    errors                      : 2/2 failed - Request timed out.
+
+  Provider : qwen3.5-flash united-states
+  Prompt   : prompts/token-speed.txt
+    errors                      : 2/2 failed - Request timed out. | Connection error.
+
+  Provider : gemini-3-flash-preview openrouter
+  Prompt   : prompts/ttft.txt
+    errors                      : 2/2 failed - 403 This model is not available in your region.
+
+  Provider : gemini-3-flash-preview openrouter
+  Prompt   : prompts/token-speed.txt
+    errors                      : 2/2 failed - 403 This model is not available in your region.
+
+  Provider : qwen3.5 xgd local
+  Prompt   : prompts/ttft.txt
+    avg total latency           : 1551.5 ms
+    avg TTFT                    : 861.5 ms
+    avg tokens/sec              : 38.2 tok/s
+    avg completion tokens       : 26 tokens
+
+  Provider : qwen3.5 xgd local
+  Prompt   : prompts/token-speed.txt
+    avg total latency           : 52261.5 ms
+    avg TTFT                    : 4721 ms
+    avg tokens/sec              : 13.7 tok/s
+    avg completion tokens       : 198.5 tokens
+
+────────────────────────────────────────────────────────────
+
