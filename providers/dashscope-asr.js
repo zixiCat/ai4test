@@ -1,3 +1,6 @@
+const fs = require('node:fs/promises');
+const path = require('node:path');
+
 const OpenAI = require('openai');
 
 function firstDefined(...values) {
@@ -115,7 +118,39 @@ function parseErrorBody(body) {
   }
 }
 
-function buildAsrRequest(vars, config) {
+function resolveAudioFilePath(audioFile) {
+  if (path.isAbsolute(audioFile)) {
+    return audioFile;
+  }
+
+  return path.resolve(process.cwd(), audioFile);
+}
+
+function inferAudioMimeType(audioFile, configuredMime) {
+  if (configuredMime) {
+    return String(configuredMime).trim();
+  }
+
+  switch (path.extname(audioFile).toLowerCase()) {
+    case '.mp3':
+      return 'audio/mpeg';
+    case '.mp4':
+    case '.m4a':
+      return 'audio/mp4';
+    case '.wav':
+      return 'audio/wav';
+    case '.ogg':
+      return 'audio/ogg';
+    case '.webm':
+      return 'audio/webm';
+    case '.flac':
+      return 'audio/flac';
+    default:
+      return 'application/octet-stream';
+  }
+}
+
+async function resolveAudioData(vars, config) {
   const audioData = firstDefined(
     vars.audio_data,
     vars.audioData,
@@ -125,9 +160,42 @@ function buildAsrRequest(vars, config) {
     config.audioUrl,
   );
 
-  if (!audioData) {
-    throw new Error(`Missing audio input for ${config.model}. Set audio_url or audio_data in the test vars.`);
+  if (audioData) {
+    return audioData;
   }
+
+  const audioFile = firstDefined(
+    vars.audio_file,
+    vars.audioFile,
+    vars.audio_path,
+    vars.audioPath,
+    config.audioFile,
+    config.audioPath,
+  );
+
+  if (!audioFile) {
+    throw new Error(`Missing audio input for ${config.model}. Set audio_url, audio_data, or audio_file in the test vars.`);
+  }
+
+  const resolvedAudioFile = resolveAudioFilePath(String(audioFile));
+
+  let audioBuffer;
+  try {
+    audioBuffer = await fs.readFile(resolvedAudioFile);
+  } catch (error) {
+    throw new Error(`Failed to read audio file ${resolvedAudioFile}: ${error.message}`);
+  }
+
+  const audioMime = inferAudioMimeType(
+    resolvedAudioFile,
+    firstDefined(vars.audio_mime, vars.audioMime, config.audioMime),
+  );
+
+  return `data:${audioMime};base64,${audioBuffer.toString('base64')}`;
+}
+
+async function buildAsrRequest(vars, config) {
+  const audioData = await resolveAudioData(vars, config);
 
   const content = [{
     type: 'input_audio',
@@ -275,7 +343,7 @@ module.exports = class DashScopeAsrProvider {
     let isStreaming = false;
 
     try {
-      const requestBody = buildAsrRequest(vars, config);
+      const requestBody = await buildAsrRequest(vars, config);
       const response = await client.chat.completions.create(requestBody);
       if (requestBody.stream) {
         ({ output, firstTokenAt, tokenUsage, isStreaming } = await readChatCompletionStream(response));

@@ -1,11 +1,11 @@
 - description: official welcome sample
   vars:
-    audio_url: https://dashscope.oss-cn-beijing.aliyuncs.com/audios/welcome.mp3
+    audio_file: ./test_data/welcome.mp3
 
 - description: official welcome sample repeat 2
   vars:
-    audio_url: https://dashscope.oss-cn-beijing.aliyuncs.com/audios/welcome.mp3
+    audio_file: ./test_data/welcome.mp3
 
 - description: official welcome sample repeat 3
   vars:
-    audio_url: https://dashscope.oss-cn-beijing.aliyuncs.com/audios/welcome.mp3
+    audio_file: ./test_data/welcome.mp3

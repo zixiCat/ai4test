@@ -64,7 +64,7 @@ The benchmark metrics are emitted as `namedScores` from `tests/metrics.js`, whic
 
 ## Notes
 
-- The ASR benchmark ships with the official DashScope sample audio URL. Replace `audio_url` in `tests/asr-benchmark-cases.yaml` with your own files when needed.
+- The ASR benchmark can read local audio files from `test_data/` via `audio_file` in `tests/asr-benchmark-cases.yaml`; the provider converts them to base64 data URIs before sending the request.
 - The TTS benchmark defaults to the `Cherry` voice on the Singapore HTTP API. Override `voice`, `language_type`, or the text cases in `tests/tts-benchmark-cases.yaml` as needed.
 - When usage data is missing from a streamed text response, the provider falls back to a simple character-based token estimate so throughput still stays comparable.
 
