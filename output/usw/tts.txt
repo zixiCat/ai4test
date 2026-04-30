@@ -1,0 +1,15 @@
+
+────────────────────────────────────────────────────────────
+  Benchmark Named Scores
+────────────────────────────────────────────────────────────
+
+  Provider : qwen3-tts-flash singapore
+  Prompt   : prompts/tts.txt
+    avg total latency           : 2868.7 ms
+    avg TTFT                    : 553.7 ms
+    avg audio bytes/sec         : 202368.8 B/s
+    avg audio bytes             : 430124 bytes
+    avg input characters        : 82.3 chars
+
+────────────────────────────────────────────────────────────
+

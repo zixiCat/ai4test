@@ -1,0 +1,91 @@
+
+────────────────────────────────────────────────────────────
+  Benchmark Named Scores
+────────────────────────────────────────────────────────────
+
+  Provider : qwen3.5-flash singapore
+  Prompt   : prompts/ttft.txt
+    avg total latency           : 32109 ms
+    avg TTFT                    : 1500.3 ms
+    avg tokens/sec              : 140.9 tok/s
+    avg completion tokens       : 4203.7 tokens
+
+  Provider : qwen3.5-flash singapore
+  Prompt   : prompts/token-speed.txt
+    avg total latency           : 50928.3 ms
+    avg TTFT                    : 1486 ms
+    avg tokens/sec              : 145.0 tok/s
+    avg completion tokens       : 7155 tokens
+
+  Provider : qwen3.5-omni-flash singapore
+  Prompt   : prompts/ttft.txt
+    avg total latency           : 1572 ms
+    avg TTFT                    : 1454.7 ms
+    avg tokens/sec              : 198.8 tok/s
+    avg completion tokens       : 22.7 tokens
+
+  Provider : qwen3.5-omni-flash singapore
+  Prompt   : prompts/token-speed.txt
+    avg total latency           : 2964.7 ms
+    avg TTFT                    : 1454 ms
+    avg tokens/sec              : 150.4 tok/s
+    avg completion tokens       : 180 tokens
+
+  Provider : qwen3.5-omni-plus singapore
+  Prompt   : prompts/ttft.txt
+    avg total latency           : 6856 ms
+    avg TTFT                    : 4739 ms
+    avg tokens/sec              : 2352.1 tok/s
+    avg completion tokens       : 22.7 tokens
+
+  Provider : qwen3.5-omni-plus singapore
+  Prompt   : prompts/token-speed.txt
+    avg total latency           : 5285 ms
+    avg TTFT                    : 2547 ms
+    avg tokens/sec              : 101.5 tok/s
+    avg completion tokens       : 195.7 tokens
+
+  Provider : qwen3.5-flash united-states
+  Prompt   : prompts/ttft.txt
+    avg total latency           : 43051.3 ms
+    avg TTFT                    : 5987.3 ms
+    avg tokens/sec              : 130.3 tok/s
+    avg completion tokens       : 4834.7 tokens
+
+  Provider : qwen3.5-flash united-states
+  Prompt   : prompts/token-speed.txt
+    avg total latency           : 59840.3 ms
+    avg TTFT                    : 6431 ms
+    avg tokens/sec              : 125.8 tok/s
+    avg completion tokens       : 6723.7 tokens
+
+  Provider : gemini-3-flash-preview openrouter
+  Prompt   : prompts/ttft.txt
+    avg total latency           : 4673.7 ms
+    avg TTFT                    : 4650.3 ms
+    avg tokens/sec              : 9226.0 tok/s
+    avg completion tokens       : 25.7 tokens
+
+  Provider : gemini-3-flash-preview openrouter
+  Prompt   : prompts/token-speed.txt
+    avg total latency           : 6370.7 ms
+    avg TTFT                    : 4881 ms
+    avg tokens/sec              : 143.7 tok/s
+    avg completion tokens       : 209.7 tokens
+
+  Provider : qwen3.5 xgd local
+  Prompt   : prompts/ttft.txt
+    avg total latency           : 1487.3 ms
+    avg TTFT                    : 1261 ms
+    avg tokens/sec              : 118.4 tok/s
+    avg completion tokens       : 24.3 tokens
+
+  Provider : qwen3.5 xgd local
+  Prompt   : prompts/token-speed.txt
+    avg total latency           : 2944 ms
+    avg TTFT                    : 1209 ms
+    avg tokens/sec              : 107.6 tok/s
+    avg completion tokens       : 184.7 tokens
+
+────────────────────────────────────────────────────────────
+
