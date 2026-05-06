@@ -4,6 +4,8 @@ const { spawnSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
+require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
+
 const [, , configArg, outputArg, country] = process.argv;
 
 if (!configArg || !outputArg || !country) {
