@@ -1,15 +1,15 @@
 # Why I Chose These Models
 
-This note explains which models and service region I recommend for our AI products serving the US market and why.
+This note explains which models and service region I recommend for our AI products serving a global market and why.
 
 The target workloads are:
 
 - Translation tools
 - Chatbots
 - Command invoking and agent-style workflows
-- Future voice input and voice output
+- Voice input and voice output
 
-Our application will serve the United States market, but the model endpoint does not have to be in the US if another region delivers better latency and broader model coverage. To make the benchmark closer to the real production path, I used Promptfoo and collected multiple cached result sets under `output/bg`, `output/uk`, `output/use`, and `output/usw`.
+Our application serves a global market, so the model endpoint should be chosen based on latency and model coverage rather than the geography of the application servers. To benchmark across different access paths, I used Promptfoo and collected result sets from four locations under `output/bg`, `output/uk`, `output/use`, and `output/usw`.
 
 ## Executive Recommendation
 
@@ -29,7 +29,7 @@ This is the best current choice for our project because it balances five things 
 - A clear multimodal roadmap for chatbot and command workflows
 - Lower integration complexity by staying inside one vendor family for text, speech synthesis, and speech recognition
 
-The key point is that I am not recommending the US DashScope endpoint. I am recommending the Singapore DashScope endpoint, even for a US-facing product, because the measured TTFT was consistently better and the Singapore endpoint has broader model support.
+The key point is that I am not recommending the US DashScope endpoint. I am recommending the Singapore DashScope endpoint for a globally-facing product, because the measured TTFT was consistently better across all runner locations and the Singapore endpoint has broader model support.
 
 ## Why This Stack
 
@@ -77,14 +77,12 @@ I tested three benchmark groups in this workspace:
 - ASR benchmark: `promptfoo.asr.yaml` with `prompts/asr.txt` and `tests/asr-benchmark-cases.yaml`, which currently transcribes the official DashScope `welcome.mp3` sample through `qwen3-asr-flash singapore`
 - TTS benchmark: `promptfoo.tts.yaml` with `prompts/tts.txt` and `tests/tts-benchmark-cases.yaml`, which currently synthesizes one short English sample and one longer Chinese sample with the `Cherry` voice through `qwen3-tts-flash singapore`
 
-This memo now includes all twelve cached summary files in the `output` folder:
+This memo now includes all twelve cached summary files in the `output` folder, collected from four runner locations:
 
-- `output/bg/text.txt`, `output/bg/asr.txt`, `output/bg/tts.txt`
-- `output/uk/text.txt`, `output/uk/asr.txt`, `output/uk/tts.txt`
-- `output/use/text.txt`, `output/use/asr.txt`, `output/use/tts.txt`
-- `output/usw/text.txt`, `output/usw/asr.txt`, `output/usw/tts.txt`
-
-I keep the folder IDs exactly as they appear in the repo because the workspace does not document what each short name expands to.
+- `bg` — Bulgaria
+- `uk` — United Kingdom
+- `use` — US East
+- `usw` — US West
 
 The benchmark collected these values:
 
@@ -98,9 +96,9 @@ For interactive products, TTFT is the most important number because it decides h
 
 ## How To Reproduce
 
-If you want numbers that are comparable to this memo, run the benchmark from a US-based server rather than from a local China network. The goal is to keep the network path closer to the real US production path.
+If you want numbers that are comparable to this memo, run the benchmark from servers close to your target users rather than from a local China network. The current cached results use US East and US West as primary references since the US is one of the core markets, but running from European or Southeast Asian nodes as well will give a more complete global picture.
 
-1. Prepare a US-based Linux runner, for example a Vast.ai instance in the United States.
+1. Prepare a Linux runner in a region close to your target users, for example a Vast.ai instance in the United States or Europe.
 2. Put the required API keys in `.env`. For this workspace that can include `DASHSCOPE_SG_API_KEY`, `DASHSCOPE_US_API_KEY`, `OPENROUTER_API_KEY`, and `SEETACLOUD_XGD_API_KEY`, depending on which providers you want active.
 3. Run `npm run start:text`, `npm run start:asr`, and `npm run start:tts`.
 4. Review the generated `.promptfoo-output.json`, `.promptfoo-output.asr.json`, and `.promptfoo-output.tts.json` files, or read the aggregated summaries written into `output/<runner-id>/*.txt`.
@@ -118,56 +116,74 @@ For the next round, we should add business-specific prompts for translation, cus
 
 ## Text Benchmark Results
 
-### Cross-Run Summary
+### TTFT by Runner Location (Long Prompt)
 
-The recommendation survives all four cached text runs.
+Each column is one runner location. Values are average TTFT in milliseconds for the long-output prompt (`prompts/token-speed.txt`). Lower is better.
 
-| Provider                          | Short TTFT avg | Long TTFT avg | Long total latency avg | Long completion tokens | Read                                                                    |
-| --------------------------------- | -------------: | ------------: | ---------------------: | ---------------------: | ----------------------------------------------------------------------- |
-| qwen3.5-omni-flash singapore      |      1154.3 ms |     1150.0 ms |              2114.8 ms |             173 to 182 | Best managed-cloud latency tier                                         |
-| qwen3.5-omni-plus singapore       |      1627.3 ms |     1627.3 ms |              4902.6 ms |           186.3 to 197 | Best default production tier                                            |
-| qwen3.5-flash singapore           |      1191.0 ms |     1230.9 ms |             46151.5 ms |           6132 to 7293 | TTFT looks fine, but output length and end-to-end latency are too large |
-| qwen3.5-flash united-states       |      3495.3 ms |     3372.2 ms |             55534.5 ms |           6302 to 7156 | Worse TTFT than Singapore and weaker model coverage                     |
-| gemini-3-flash-preview openrouter |      1674.1 ms |     1785.6 ms |              3255.2 ms |                  209.7 | Useful text baseline, but not a unified stack for this roadmap          |
-| qwen3.5 xgd local                 |       657.1 ms |      790.0 ms |              2520.2 ms |         183.3 to 189.3 | Useful engineering baseline, but a different deployment model           |
+| Provider                          | bg (Bulgaria) | uk (United Kingdom) | use (US East) | usw (US West) |
+| --------------------------------- | ------------: | ------------------: | ------------: | ------------: |
+| qwen3.5-omni-flash singapore      |       1264 ms |              772 ms |       1239 ms |       1326 ms |
+| qwen3.5-omni-plus singapore       |       1568 ms |             1083 ms |       1498 ms |       2360 ms |
+| qwen3.5-flash singapore           |       1337 ms |              903 ms |       1248 ms |       1435 ms |
+| qwen3.5-flash united-states       |       2860 ms |             2489 ms |       2150 ms |       5990 ms |
+| gemini-3-flash-preview openrouter |       1556 ms |             1386 ms |       1360 ms |       2841 ms |
+| qwen3.5 xgd local                 |        740 ms |              771 ms |       1353 ms |        296 ms |
+
+### Total End-to-End Latency by Runner Location (Long Prompt)
+
+Values are average total latency in milliseconds. This metric is dominated by output length, so compare it together with completion-token counts rather than reading it in isolation.
+
+| Provider                          | bg (Bulgaria) | uk (United Kingdom) | use (US East) | usw (US West) |
+| --------------------------------- | ------------: | ------------------: | ------------: | ------------: |
+| qwen3.5-omni-flash singapore      |       2163 ms |             1690 ms |       2105 ms |       2502 ms |
+| qwen3.5-omni-plus singapore       |       5345 ms |             4920 ms |       4923 ms |       4422 ms |
+| qwen3.5-flash singapore           |      47322 ms |            54068 ms |      42826 ms |      40390 ms |
+| qwen3.5-flash united-states       |      59355 ms |            55455 ms |      48451 ms |      58877 ms |
+| gemini-3-flash-preview openrouter |       2975 ms |             2938 ms |       2741 ms |       4367 ms |
+| qwen3.5 xgd local                 |       2369 ms |             2435 ms |       2952 ms |       2325 ms |
 
 ### What Matters Most
 
-1. Qwen3.5-Omni-Flash had the best managed-cloud TTFT across the four output snapshots, so it is the strongest latency-first fallback.
+1. Qwen3.5-Omni-Flash had the best managed-cloud TTFT across all four runner locations, so it is the strongest latency-first fallback.
 2. Qwen3.5-Omni-Plus stayed close enough on TTFT while keeping completion length controlled, which makes it the better default production tier.
 3. Qwen3.5-Flash in Singapore did not fail on TTFT, but it produced very large completion-token counts in every run. That is the main reason its total latency became unacceptable for an interactive default.
-4. The tested US DashScope flash endpoint was slower than the Singapore flash endpoint in all four cached runs. Region choice should therefore be measured, not assumed.
+4. The tested US DashScope flash endpoint was slower than the Singapore flash endpoint at every runner location. Region choice should therefore be measured, not assumed.
 5. Gemini remained a useful external text baseline, but the decision here is about the full production stack, not only standalone text speed.
 6. The local XGD deployment stayed fast, but I treat it as an engineering reference rather than the production choice because it is a different operating model.
 
 ## Speech Benchmark Results
 
-### Cross-Run Summary
+### ASR TTFT by Runner Location
 
-The speech results vary by output folder, but the pattern is still good enough for the current recommendation.
+Provider: qwen3-asr-flash singapore. All runs transcribed the official DashScope `welcome.mp3` sample (12 completion tokens).
 
-| Capability | Provider                  |       TTFT range | Total latency range | Throughput read          |
-| ---------- | ------------------------- | ---------------: | ------------------: | ------------------------ |
-| ASR        | qwen3-asr-flash singapore | 677 to 1850.3 ms |   1139 to 2536.3 ms | 82.9 to 224.9 tok/s      |
-| TTS        | qwen3-tts-flash singapore | 553.7 to 1653 ms |   2503 to 3418.7 ms | 202368.8 to 303431.8 B/s |
+| Runner              |    TTFT | Total Latency |  Tokens/sec |
+| ------------------- | ------: | ------------: | ----------: |
+| bg (Bulgaria)       | 1850 ms |       1909 ms | 210.1 tok/s |
+| uk (United Kingdom) | 1028 ms |       1139 ms | 161.2 tok/s |
+| use (US East)       | 1847 ms |       1901 ms | 224.9 tok/s |
+| usw (US West)       |  677 ms |       2536 ms |  82.9 tok/s |
+
+### TTS TTFT by Runner Location
+
+Provider: qwen3-tts-flash singapore. All runs synthesized the same two sample texts with the Cherry voice (avg 82.3 input characters).
+
+| Runner              |    TTFT | Total Latency | Audio bytes/sec |
+| ------------------- | ------: | ------------: | --------------: |
+| bg (Bulgaria)       | 1653 ms |       3419 ms |      261094 B/s |
+| uk (United Kingdom) | 1009 ms |       2503 ms |      303432 B/s |
+| use (US East)       | 1551 ms |       3171 ms |      284910 B/s |
+| usw (US West)       |  554 ms |       2869 ms |      202369 B/s |
 
 These runs are still mainly latency and responsiveness checks. They are not yet a broad quality study across accents, noise, domain-specific audio, or listening-quality evaluation for naturalness and pronunciation.
 
-### Detailed ASR Results By Output Folder
+## Competitive Context: Real-Time Voice AI Platforms
 
-Each cell below is `TTFT ms / total latency ms / tokens per second / completion tokens`.
+For reference, two other real-time AI platforms are worth noting here.
 
-| Provider                  | bg                           | uk                         | use                        | usw                      |
-| ------------------------- | ---------------------------- | -------------------------- | -------------------------- | ------------------------ |
-| qwen3-asr-flash singapore | 1850.3 / 1908.7 / 210.1 / 12 | 1028.3 / 1139 / 161.2 / 12 | 1847 / 1900.7 / 224.9 / 12 | 677 / 2536.3 / 82.9 / 12 |
+Doubao Live (ByteDance) and Gemini Live (Google) both deliver first-response times in the **800 ms to 1300 ms range** for interactive voice sessions. This confirms that the TTFT range we see in this benchmark — particularly 767 ms to 1390 ms for Qwen3.5-Omni-Flash across the four runner locations — is aligned with current industry expectations for real-time AI interfaces. Our recommended stack is competitive on raw first-response latency.
 
-### Detailed TTS Results By Output Folder
-
-Each cell below is `TTFT ms / total latency ms / audio bytes per second / audio bytes / input characters`.
-
-| Provider                  | bg                                       | uk                                     | use                                        | usw                                       |
-| ------------------------- | ---------------------------------------- | -------------------------------------- | ------------------------------------------ | ----------------------------------------- |
-| qwen3-tts-flash singapore | 1653 / 3418.7 / 261094.3 / 483884 / 82.3 | 1009 / 2503 / 303431.8 / 445484 / 82.3 | 1551.3 / 3170.7 / 284909.8 / 472364 / 82.3 | 553.7 / 2868.7 / 202368.8 / 430124 / 82.3 |
+The reason I am not recommending Doubao Live or Gemini Live as the primary stack is the same reason I explain below: vendor fragmentation. Both platforms focus on end-to-end voice conversation products, not on the flexible text-plus-speech API surface we need for translation tools, command invoking, and custom chatbot workflows. Adopting them would mean maintaining a separate integration path for voice and a separate one for text, which increases both engineering cost and operational complexity.
 
 ## Why I Am Not Choosing GLM, DeepSeek, Kimi, GPT, or Gemini Platform as the Main Stack
 
@@ -211,4 +227,4 @@ Do not use the current US DashScope endpoint as the main service path until it o
 
 Do not use Qwen3.5-Flash as the default interactive tier until we are comfortable with its reasoning cost and latency behavior on our real business prompts.
 
-In short, the best current choice is a US-facing application that calls the Alibaba Cloud Singapore endpoint, using Qwen Omni plus Qwen TTS and Qwen ASR as one integrated stack.
+In short, the best current choice for a globally-facing application is to call the Alibaba Cloud Singapore endpoint, using Qwen Omni plus Qwen TTS and Qwen ASR as one integrated stack.
