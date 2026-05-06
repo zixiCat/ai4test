@@ -1,0 +1,14 @@
+
+────────────────────────────────────────────────────────────
+  Benchmark Named Scores
+────────────────────────────────────────────────────────────
+
+  Provider : qwen3-asr-flash singapore
+  Prompt   : prompts/asr.txt
+    avg total latency           : 1908.7 ms
+    avg TTFT                    : 1850.3 ms
+    avg tokens/sec              : 210.1 tok/s
+    avg completion tokens       : 12 tokens
+
+────────────────────────────────────────────────────────────
+
