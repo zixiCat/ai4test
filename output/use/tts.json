@@ -1,0 +1,741 @@
+{
+  "evalId": "eval-3d8-2026-05-06T08:15:24",
+  "results": {
+    "version": 3,
+    "timestamp": "2026-05-06T08:15:24.224Z",
+    "prompts": [
+      {
+        "raw": "{{tts_text}}",
+        "label": "/workspace/ai4test/prompts/tts.txt: {{tts_text}}",
+        "id": "93ab339d6ad9f8c7f6b58a2edf41ebcb1400d29d6f86227da7b2701eae60fc83",
+        "provider": "qwen3-tts-flash singapore",
+        "metrics": {
+          "score": 3,
+          "testPassCount": 3,
+          "testFailCount": 0,
+          "testErrorCount": 0,
+          "assertPassCount": 3,
+          "assertFailCount": 0,
+          "totalLatencyMs": 9534,
+          "tokenUsage": {
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "total": 0,
+            "numRequests": 3,
+            "completionDetails": {
+              "reasoning": 0,
+              "acceptedPrediction": 0,
+              "rejectedPrediction": 0,
+              "cacheReadInputTokens": 0,
+              "cacheCreationInputTokens": 0
+            },
+            "assertions": {
+              "total": 0,
+              "prompt": 0,
+              "completion": 0,
+              "cached": 0,
+              "numRequests": 0,
+              "completionDetails": {
+                "reasoning": 0,
+                "acceptedPrediction": 0,
+                "rejectedPrediction": 0,
+                "cacheReadInputTokens": 0,
+                "cacheCreationInputTokens": 0
+              }
+            }
+          },
+          "namedScores": {
+            "total_latency_ms_sum": 9512,
+            "total_latency_ms_count": 3,
+            "ttft_ms_sum": 4654,
+            "ttft_ms_count": 3,
+            "output_tokens_per_second_sum": 0,
+            "output_tokens_per_second_count": 0,
+            "completion_tokens_sum": 0,
+            "completion_tokens_count": 0,
+            "audio_bytes_per_second_sum": 854729.315219092,
+            "audio_bytes_per_second_count": 3,
+            "audio_bytes_sum": 1417092,
+            "audio_bytes_count": 3,
+            "input_characters_sum": 247,
+            "input_characters_count": 3,
+            "avg_total_latency_ms": 3170.6666666666665,
+            "avg_ttft_ms": 1551.3333333333333,
+            "avg_audio_bytes_per_second": 284909.7717396973,
+            "avg_audio_bytes": 472364,
+            "avg_input_characters": 82.33333333333333
+          },
+          "namedScoresCount": {
+            "total_latency_ms_sum": 3,
+            "total_latency_ms_count": 3,
+            "ttft_ms_sum": 3,
+            "ttft_ms_count": 3,
+            "output_tokens_per_second_sum": 3,
+            "output_tokens_per_second_count": 3,
+            "completion_tokens_sum": 3,
+            "completion_tokens_count": 3,
+            "audio_bytes_per_second_sum": 3,
+            "audio_bytes_per_second_count": 3,
+            "audio_bytes_sum": 3,
+            "audio_bytes_count": 3,
+            "input_characters_sum": 3,
+            "input_characters_count": 3
+          },
+          "namedScoreWeights": {
+            "total_latency_ms_sum": 3,
+            "total_latency_ms_count": 3,
+            "ttft_ms_sum": 3,
+            "ttft_ms_count": 3,
+            "output_tokens_per_second_sum": 3,
+            "output_tokens_per_second_count": 3,
+            "completion_tokens_sum": 3,
+            "completion_tokens_count": 3,
+            "audio_bytes_per_second_sum": 3,
+            "audio_bytes_per_second_count": 3,
+            "audio_bytes_sum": 3,
+            "audio_bytes_count": 3,
+            "input_characters_sum": 3,
+            "input_characters_count": 3
+          },
+          "cost": 0
+        }
+      }
+    ],
+    "results": [
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {
+            "total_latency_ms_sum": 2398,
+            "total_latency_ms_count": 1,
+            "ttft_ms_sum": 1610,
+            "ttft_ms_count": 1,
+            "output_tokens_per_second_sum": 0,
+            "output_tokens_per_second_count": 0,
+            "completion_tokens_sum": 0,
+            "completion_tokens_count": 0,
+            "audio_bytes_per_second_sum": 243710.65989847714,
+            "audio_bytes_per_second_count": 1,
+            "audio_bytes_sum": 192044,
+            "audio_bytes_count": 1,
+            "input_characters_sum": 56,
+            "input_characters_count": 1
+          },
+          "namedScoreWeights": {
+            "total_latency_ms_sum": 1,
+            "total_latency_ms_count": 1,
+            "ttft_ms_sum": 1,
+            "ttft_ms_count": 1,
+            "output_tokens_per_second_sum": 1,
+            "output_tokens_per_second_count": 1,
+            "completion_tokens_sum": 1,
+            "completion_tokens_count": 1,
+            "audio_bytes_per_second_sum": 1,
+            "audio_bytes_per_second_count": 1,
+            "audio_bytes_sum": 1,
+            "audio_bytes_count": 1,
+            "input_characters_sum": 1,
+            "input_characters_count": 1
+          },
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Collected benchmark metrics",
+              "namedScores": {
+                "total_latency_ms_sum": 2398,
+                "total_latency_ms_count": 1,
+                "ttft_ms_sum": 1610,
+                "ttft_ms_count": 1,
+                "output_tokens_per_second_sum": 0,
+                "output_tokens_per_second_count": 0,
+                "completion_tokens_sum": 0,
+                "completion_tokens_count": 0,
+                "audio_bytes_per_second_sum": 243710.65989847714,
+                "audio_bytes_per_second_count": 1,
+                "audio_bytes_sum": 192044,
+                "audio_bytes_count": 1,
+                "input_characters_sum": 56,
+                "input_characters_count": 1
+              },
+              "namedScoreWeights": {
+                "total_latency_ms_sum": 1,
+                "total_latency_ms_count": 1,
+                "ttft_ms_sum": 1,
+                "ttft_ms_count": 1,
+                "output_tokens_per_second_sum": 1,
+                "output_tokens_per_second_count": 1,
+                "completion_tokens_sum": 1,
+                "completion_tokens_count": 1,
+                "audio_bytes_per_second_sum": 1,
+                "audio_bytes_per_second_count": 1,
+                "audio_bytes_sum": 1,
+                "audio_bytes_count": 1,
+                "input_characters_sum": 1,
+                "input_characters_count": 1
+              },
+              "assertion": {
+                "type": "javascript",
+                "value": "file://./tests/metrics.js:benchmarkMetrics"
+              }
+            }
+          ]
+        },
+        "id": "6120bb8b-12fd-4ec8-b527-e941e9f70589",
+        "latencyMs": 2404,
+        "namedScores": {
+          "total_latency_ms_sum": 2398,
+          "total_latency_ms_count": 1,
+          "ttft_ms_sum": 1610,
+          "ttft_ms_count": 1,
+          "output_tokens_per_second_sum": 0,
+          "output_tokens_per_second_count": 0,
+          "completion_tokens_sum": 0,
+          "completion_tokens_count": 0,
+          "audio_bytes_per_second_sum": 243710.65989847714,
+          "audio_bytes_per_second_count": 1,
+          "audio_bytes_sum": 192044,
+          "audio_bytes_count": 1,
+          "input_characters_sum": 56,
+          "input_characters_count": 1
+        },
+        "prompt": {
+          "raw": "Today is a wonderful day to build something people love!",
+          "label": "/workspace/ai4test/prompts/tts.txt: {{tts_text}}",
+          "config": {}
+        },
+        "promptId": "93ab339d6ad9f8c7f6b58a2edf41ebcb1400d29d6f86227da7b2701eae60fc83",
+        "promptIdx": 0,
+        "provider": {
+          "id": "./providers/dashscope-tts.js",
+          "label": "qwen3-tts-flash singapore"
+        },
+        "response": {
+          "output": "http://dashscope-result-sgp.oss-ap-southeast-1.aliyuncs.com/prod/qwen3-tts/20260506/1885958016410583/3a1f699c-7f8c-9b27-8635-d749ed59fb0a.wav?Expires=1778141725&OSSAccessKeyId=LTAI5tH3z8ZN1nFpsgp85HQ6&Signature=rY6L2N7AayzYcmIaNcDQifeF1qw%3D",
+          "metadata": {
+            "apiBaseUrl": "https://dashscope-intl.aliyuncs.com/api/v1",
+            "region": "singapore",
+            "model": "qwen3-tts-flash",
+            "requestType": "tts",
+            "totalLatencyMs": 2398,
+            "ttftMs": 1610,
+            "audioByteCount": 192044,
+            "audioBytesPerSecond": 243710.65989847714,
+            "inputCharacterCount": 56,
+            "audioUrl": "http://dashscope-result-sgp.oss-ap-southeast-1.aliyuncs.com/prod/qwen3-tts/20260506/1885958016410583/3a1f699c-7f8c-9b27-8635-d749ed59fb0a.wav?Expires=1778141725&OSSAccessKeyId=LTAI5tH3z8ZN1nFpsgp85HQ6&Signature=rY6L2N7AayzYcmIaNcDQifeF1qw%3D",
+            "audioId": "audio_3a1f699c-7f8c-9b27-8635-d749ed59fb0a",
+            "expiresAt": 1778141725,
+            "voice": "Cherry"
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "english product intro",
+          "vars": {
+            "tts_text": "Today is a wonderful day to build something people love!",
+            "language_type": "English",
+            "voice": "Cherry"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://./tests/metrics.js:benchmarkMetrics"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 0,
+        "vars": {
+          "tts_text": "Today is a wonderful day to build something people love!",
+          "language_type": "English",
+          "voice": "Cherry"
+        },
+        "metadata": {
+          "apiBaseUrl": "https://dashscope-intl.aliyuncs.com/api/v1",
+          "region": "singapore",
+          "model": "qwen3-tts-flash",
+          "requestType": "tts",
+          "totalLatencyMs": 2398,
+          "ttftMs": 1610,
+          "audioByteCount": 192044,
+          "audioBytesPerSecond": 243710.65989847714,
+          "inputCharacterCount": 56,
+          "audioUrl": "http://dashscope-result-sgp.oss-ap-southeast-1.aliyuncs.com/prod/qwen3-tts/20260506/1885958016410583/3a1f699c-7f8c-9b27-8635-d749ed59fb0a.wav?Expires=1778141725&OSSAccessKeyId=LTAI5tH3z8ZN1nFpsgp85HQ6&Signature=rY6L2N7AayzYcmIaNcDQifeF1qw%3D",
+          "audioId": "audio_3a1f699c-7f8c-9b27-8635-d749ed59fb0a",
+          "expiresAt": 1778141725,
+          "voice": "Cherry",
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {
+            "total_latency_ms_sum": 4609,
+            "total_latency_ms_count": 1,
+            "ttft_ms_sum": 1493,
+            "ttft_ms_count": 1,
+            "output_tokens_per_second_sum": 0,
+            "output_tokens_per_second_count": 0,
+            "completion_tokens_sum": 0,
+            "completion_tokens_count": 0,
+            "audio_bytes_per_second_sum": 297010.26957638,
+            "audio_bytes_per_second_count": 1,
+            "audio_bytes_sum": 925484,
+            "audio_bytes_count": 1,
+            "input_characters_sum": 103,
+            "input_characters_count": 1
+          },
+          "namedScoreWeights": {
+            "total_latency_ms_sum": 1,
+            "total_latency_ms_count": 1,
+            "ttft_ms_sum": 1,
+            "ttft_ms_count": 1,
+            "output_tokens_per_second_sum": 1,
+            "output_tokens_per_second_count": 1,
+            "completion_tokens_sum": 1,
+            "completion_tokens_count": 1,
+            "audio_bytes_per_second_sum": 1,
+            "audio_bytes_per_second_count": 1,
+            "audio_bytes_sum": 1,
+            "audio_bytes_count": 1,
+            "input_characters_sum": 1,
+            "input_characters_count": 1
+          },
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Collected benchmark metrics",
+              "namedScores": {
+                "total_latency_ms_sum": 4609,
+                "total_latency_ms_count": 1,
+                "ttft_ms_sum": 1493,
+                "ttft_ms_count": 1,
+                "output_tokens_per_second_sum": 0,
+                "output_tokens_per_second_count": 0,
+                "completion_tokens_sum": 0,
+                "completion_tokens_count": 0,
+                "audio_bytes_per_second_sum": 297010.26957638,
+                "audio_bytes_per_second_count": 1,
+                "audio_bytes_sum": 925484,
+                "audio_bytes_count": 1,
+                "input_characters_sum": 103,
+                "input_characters_count": 1
+              },
+              "namedScoreWeights": {
+                "total_latency_ms_sum": 1,
+                "total_latency_ms_count": 1,
+                "ttft_ms_sum": 1,
+                "ttft_ms_count": 1,
+                "output_tokens_per_second_sum": 1,
+                "output_tokens_per_second_count": 1,
+                "completion_tokens_sum": 1,
+                "completion_tokens_count": 1,
+                "audio_bytes_per_second_sum": 1,
+                "audio_bytes_per_second_count": 1,
+                "audio_bytes_sum": 1,
+                "audio_bytes_count": 1,
+                "input_characters_sum": 1,
+                "input_characters_count": 1
+              },
+              "assertion": {
+                "type": "javascript",
+                "value": "file://./tests/metrics.js:benchmarkMetrics"
+              }
+            }
+          ]
+        },
+        "id": "6b50df8d-95a0-448a-bee1-9b3add53f097",
+        "latencyMs": 4617,
+        "namedScores": {
+          "total_latency_ms_sum": 4609,
+          "total_latency_ms_count": 1,
+          "ttft_ms_sum": 1493,
+          "ttft_ms_count": 1,
+          "output_tokens_per_second_sum": 0,
+          "output_tokens_per_second_count": 0,
+          "completion_tokens_sum": 0,
+          "completion_tokens_count": 0,
+          "audio_bytes_per_second_sum": 297010.26957638,
+          "audio_bytes_per_second_count": 1,
+          "audio_bytes_sum": 925484,
+          "audio_bytes_count": 1,
+          "input_characters_sum": 103,
+          "input_characters_count": 1
+        },
+        "prompt": {
+          "raw": "那我来给大家推荐一款T恤，这款呢真的是超级好看，这个颜色呢很显气质，而且呢也是搭配的绝佳单品，大家可以闭眼入，真的是非常好看，对身材的包容性也很好，不管啥身材的宝宝呢，穿上去都是很好看的。推荐宝宝们下单哦。",
+          "label": "/workspace/ai4test/prompts/tts.txt: {{tts_text}}",
+          "config": {}
+        },
+        "promptId": "93ab339d6ad9f8c7f6b58a2edf41ebcb1400d29d6f86227da7b2701eae60fc83",
+        "promptIdx": 0,
+        "provider": {
+          "id": "./providers/dashscope-tts.js",
+          "label": "qwen3-tts-flash singapore"
+        },
+        "response": {
+          "output": "http://dashscope-result-sgp.oss-ap-southeast-1.aliyuncs.com/prod/qwen3-tts/20260506/1885958016410583/d4deba2c-4fa2-9e7c-a798-5828bf44345e.wav?Expires=1778141725&OSSAccessKeyId=LTAI5tH3z8ZN1nFpsgp85HQ6&Signature=Jx8%2FIjVp2j7eSLkF4V2hazg1M3w%3D",
+          "metadata": {
+            "apiBaseUrl": "https://dashscope-intl.aliyuncs.com/api/v1",
+            "region": "singapore",
+            "model": "qwen3-tts-flash",
+            "requestType": "tts",
+            "totalLatencyMs": 4609,
+            "ttftMs": 1493,
+            "audioByteCount": 925484,
+            "audioBytesPerSecond": 297010.26957638,
+            "inputCharacterCount": 103,
+            "audioUrl": "http://dashscope-result-sgp.oss-ap-southeast-1.aliyuncs.com/prod/qwen3-tts/20260506/1885958016410583/d4deba2c-4fa2-9e7c-a798-5828bf44345e.wav?Expires=1778141725&OSSAccessKeyId=LTAI5tH3z8ZN1nFpsgp85HQ6&Signature=Jx8%2FIjVp2j7eSLkF4V2hazg1M3w%3D",
+            "audioId": "audio_d4deba2c-4fa2-9e7c-a798-5828bf44345e",
+            "expiresAt": 1778141725,
+            "voice": "Cherry"
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "chinese fashion promo",
+          "vars": {
+            "tts_text": "那我来给大家推荐一款T恤，这款呢真的是超级好看，这个颜色呢很显气质，而且呢也是搭配的绝佳单品，大家可以闭眼入，真的是非常好看，对身材的包容性也很好，不管啥身材的宝宝呢，穿上去都是很好看的。推荐宝宝们下单哦。",
+            "language_type": "Chinese",
+            "voice": "Cherry"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://./tests/metrics.js:benchmarkMetrics"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 1,
+        "vars": {
+          "tts_text": "那我来给大家推荐一款T恤，这款呢真的是超级好看，这个颜色呢很显气质，而且呢也是搭配的绝佳单品，大家可以闭眼入，真的是非常好看，对身材的包容性也很好，不管啥身材的宝宝呢，穿上去都是很好看的。推荐宝宝们下单哦。",
+          "language_type": "Chinese",
+          "voice": "Cherry"
+        },
+        "metadata": {
+          "apiBaseUrl": "https://dashscope-intl.aliyuncs.com/api/v1",
+          "region": "singapore",
+          "model": "qwen3-tts-flash",
+          "requestType": "tts",
+          "totalLatencyMs": 4609,
+          "ttftMs": 1493,
+          "audioByteCount": 925484,
+          "audioBytesPerSecond": 297010.26957638,
+          "inputCharacterCount": 103,
+          "audioUrl": "http://dashscope-result-sgp.oss-ap-southeast-1.aliyuncs.com/prod/qwen3-tts/20260506/1885958016410583/d4deba2c-4fa2-9e7c-a798-5828bf44345e.wav?Expires=1778141725&OSSAccessKeyId=LTAI5tH3z8ZN1nFpsgp85HQ6&Signature=Jx8%2FIjVp2j7eSLkF4V2hazg1M3w%3D",
+          "audioId": "audio_d4deba2c-4fa2-9e7c-a798-5828bf44345e",
+          "expiresAt": 1778141725,
+          "voice": "Cherry",
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      },
+      {
+        "cost": 0,
+        "gradingResult": {
+          "pass": true,
+          "score": 1,
+          "reason": "All assertions passed",
+          "namedScores": {
+            "total_latency_ms_sum": 2505,
+            "total_latency_ms_count": 1,
+            "ttft_ms_sum": 1551,
+            "ttft_ms_count": 1,
+            "output_tokens_per_second_sum": 0,
+            "output_tokens_per_second_count": 0,
+            "completion_tokens_sum": 0,
+            "completion_tokens_count": 0,
+            "audio_bytes_per_second_sum": 314008.38574423484,
+            "audio_bytes_per_second_count": 1,
+            "audio_bytes_sum": 299564,
+            "audio_bytes_count": 1,
+            "input_characters_sum": 88,
+            "input_characters_count": 1
+          },
+          "namedScoreWeights": {
+            "total_latency_ms_sum": 1,
+            "total_latency_ms_count": 1,
+            "ttft_ms_sum": 1,
+            "ttft_ms_count": 1,
+            "output_tokens_per_second_sum": 1,
+            "output_tokens_per_second_count": 1,
+            "completion_tokens_sum": 1,
+            "completion_tokens_count": 1,
+            "audio_bytes_per_second_sum": 1,
+            "audio_bytes_per_second_count": 1,
+            "audio_bytes_sum": 1,
+            "audio_bytes_count": 1,
+            "input_characters_sum": 1,
+            "input_characters_count": 1
+          },
+          "tokensUsed": {
+            "total": 0,
+            "prompt": 0,
+            "completion": 0,
+            "cached": 0,
+            "numRequests": 0
+          },
+          "componentResults": [
+            {
+              "pass": true,
+              "score": 1,
+              "reason": "Collected benchmark metrics",
+              "namedScores": {
+                "total_latency_ms_sum": 2505,
+                "total_latency_ms_count": 1,
+                "ttft_ms_sum": 1551,
+                "ttft_ms_count": 1,
+                "output_tokens_per_second_sum": 0,
+                "output_tokens_per_second_count": 0,
+                "completion_tokens_sum": 0,
+                "completion_tokens_count": 0,
+                "audio_bytes_per_second_sum": 314008.38574423484,
+                "audio_bytes_per_second_count": 1,
+                "audio_bytes_sum": 299564,
+                "audio_bytes_count": 1,
+                "input_characters_sum": 88,
+                "input_characters_count": 1
+              },
+              "namedScoreWeights": {
+                "total_latency_ms_sum": 1,
+                "total_latency_ms_count": 1,
+                "ttft_ms_sum": 1,
+                "ttft_ms_count": 1,
+                "output_tokens_per_second_sum": 1,
+                "output_tokens_per_second_count": 1,
+                "completion_tokens_sum": 1,
+                "completion_tokens_count": 1,
+                "audio_bytes_per_second_sum": 1,
+                "audio_bytes_per_second_count": 1,
+                "audio_bytes_sum": 1,
+                "audio_bytes_count": 1,
+                "input_characters_sum": 1,
+                "input_characters_count": 1
+              },
+              "assertion": {
+                "type": "javascript",
+                "value": "file://./tests/metrics.js:benchmarkMetrics"
+              }
+            }
+          ]
+        },
+        "id": "5816bbd2-66a2-494d-b312-8cdd881068bb",
+        "latencyMs": 2513,
+        "namedScores": {
+          "total_latency_ms_sum": 2505,
+          "total_latency_ms_count": 1,
+          "ttft_ms_sum": 1551,
+          "ttft_ms_count": 1,
+          "output_tokens_per_second_sum": 0,
+          "output_tokens_per_second_count": 0,
+          "completion_tokens_sum": 0,
+          "completion_tokens_count": 0,
+          "audio_bytes_per_second_sum": 314008.38574423484,
+          "audio_bytes_per_second_count": 1,
+          "audio_bytes_sum": 299564,
+          "audio_bytes_count": 1,
+          "input_characters_sum": 88,
+          "input_characters_count": 1
+        },
+        "prompt": {
+          "raw": "Hello, your order has been confirmed and our team will send the tracking update shortly.",
+          "label": "/workspace/ai4test/prompts/tts.txt: {{tts_text}}",
+          "config": {}
+        },
+        "promptId": "93ab339d6ad9f8c7f6b58a2edf41ebcb1400d29d6f86227da7b2701eae60fc83",
+        "promptIdx": 0,
+        "provider": {
+          "id": "./providers/dashscope-tts.js",
+          "label": "qwen3-tts-flash singapore"
+        },
+        "response": {
+          "output": "http://dashscope-result-sgp.oss-ap-southeast-1.aliyuncs.com/prod/qwen3-tts/20260506/1885958016410583/847e3ce6-ad55-9c74-a83b-bf0e9df2e514.wav?Expires=1778141725&OSSAccessKeyId=LTAI5tH3z8ZN1nFpsgp85HQ6&Signature=OwU0nvPnBGcbTac5eVHsEnD8Jjg%3D",
+          "metadata": {
+            "apiBaseUrl": "https://dashscope-intl.aliyuncs.com/api/v1",
+            "region": "singapore",
+            "model": "qwen3-tts-flash",
+            "requestType": "tts",
+            "totalLatencyMs": 2505,
+            "ttftMs": 1551,
+            "audioByteCount": 299564,
+            "audioBytesPerSecond": 314008.38574423484,
+            "inputCharacterCount": 88,
+            "audioUrl": "http://dashscope-result-sgp.oss-ap-southeast-1.aliyuncs.com/prod/qwen3-tts/20260506/1885958016410583/847e3ce6-ad55-9c74-a83b-bf0e9df2e514.wav?Expires=1778141725&OSSAccessKeyId=LTAI5tH3z8ZN1nFpsgp85HQ6&Signature=OwU0nvPnBGcbTac5eVHsEnD8Jjg%3D",
+            "audioId": "audio_847e3ce6-ad55-9c74-a83b-bf0e9df2e514",
+            "expiresAt": 1778141725,
+            "voice": "Cherry"
+          }
+        },
+        "score": 1,
+        "success": true,
+        "testCase": {
+          "description": "english customer support reply",
+          "vars": {
+            "tts_text": "Hello, your order has been confirmed and our team will send the tracking update shortly.",
+            "language_type": "English",
+            "voice": "Cherry"
+          },
+          "assert": [
+            {
+              "type": "javascript",
+              "value": "file://./tests/metrics.js:benchmarkMetrics"
+            }
+          ],
+          "options": {},
+          "metadata": {}
+        },
+        "testIdx": 2,
+        "vars": {
+          "tts_text": "Hello, your order has been confirmed and our team will send the tracking update shortly.",
+          "language_type": "English",
+          "voice": "Cherry"
+        },
+        "metadata": {
+          "apiBaseUrl": "https://dashscope-intl.aliyuncs.com/api/v1",
+          "region": "singapore",
+          "model": "qwen3-tts-flash",
+          "requestType": "tts",
+          "totalLatencyMs": 2505,
+          "ttftMs": 1551,
+          "audioByteCount": 299564,
+          "audioBytesPerSecond": 314008.38574423484,
+          "inputCharacterCount": 88,
+          "audioUrl": "http://dashscope-result-sgp.oss-ap-southeast-1.aliyuncs.com/prod/qwen3-tts/20260506/1885958016410583/847e3ce6-ad55-9c74-a83b-bf0e9df2e514.wav?Expires=1778141725&OSSAccessKeyId=LTAI5tH3z8ZN1nFpsgp85HQ6&Signature=OwU0nvPnBGcbTac5eVHsEnD8Jjg%3D",
+          "audioId": "audio_847e3ce6-ad55-9c74-a83b-bf0e9df2e514",
+          "expiresAt": 1778141725,
+          "voice": "Cherry",
+          "_promptfooFileMetadata": {}
+        },
+        "failureReason": 0
+      }
+    ],
+    "stats": {
+      "successes": 3,
+      "failures": 0,
+      "errors": 0,
+      "tokenUsage": {
+        "prompt": 0,
+        "completion": 0,
+        "cached": 0,
+        "total": 0,
+        "numRequests": 3,
+        "completionDetails": {
+          "reasoning": 0,
+          "acceptedPrediction": 0,
+          "rejectedPrediction": 0,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0
+        },
+        "assertions": {
+          "total": 0,
+          "prompt": 0,
+          "completion": 0,
+          "cached": 0,
+          "numRequests": 0,
+          "completionDetails": {
+            "reasoning": 0,
+            "acceptedPrediction": 0,
+            "rejectedPrediction": 0,
+            "cacheReadInputTokens": 0,
+            "cacheCreationInputTokens": 0
+          }
+        }
+      },
+      "durationMs": 4648,
+      "evaluationDurationMs": 4648
+    }
+  },
+  "config": {
+    "tags": {},
+    "description": "DashScope Qwen3 TTS benchmark",
+    "prompts": [
+      "file:///workspace/ai4test/prompts/tts.txt"
+    ],
+    "providers": [
+      "file://./providers/dashscope-sg-qwen3-tts-flash.yaml"
+    ],
+    "tests": [
+      "file://./tests/tts-benchmark-cases.yaml"
+    ],
+    "scenarios": [],
+    "env": {},
+    "defaultTest": {
+      "assert": [
+        {
+          "type": "javascript",
+          "value": "file://./tests/metrics.js:benchmarkMetrics"
+        }
+      ]
+    },
+    "derivedMetrics": [
+      {
+        "name": "avg_total_latency_ms",
+        "value": "total_latency_ms_sum / max(total_latency_ms_count, 1)"
+      },
+      {
+        "name": "avg_ttft_ms",
+        "value": "ttft_ms_sum / max(ttft_ms_count, 1)"
+      },
+      {
+        "name": "avg_audio_bytes_per_second",
+        "value": "audio_bytes_per_second_sum / max(audio_bytes_per_second_count, 1)"
+      },
+      {
+        "name": "avg_audio_bytes",
+        "value": "audio_bytes_sum / max(audio_bytes_count, 1)"
+      },
+      {
+        "name": "avg_input_characters",
+        "value": "input_characters_sum / max(input_characters_count, 1)"
+      }
+    ],
+    "outputPath": [
+      "/workspace/ai4test/output/use/tts.json"
+    ],
+    "extensions": [],
+    "metadata": {},
+    "evaluateOptions": {
+      "maxConcurrency": 5,
+      "repeat": 1,
+      "cache": false
+    }
+  },
+  "shareableUrl": null,
+  "metadata": {
+    "promptfooVersion": "0.121.9",
+    "nodeVersion": "v22.22.2",
+    "platform": "linux",
+    "arch": "x64",
+    "exportedAt": "2026-05-06T08:15:28.965Z",
+    "evaluationCreatedAt": "2026-05-06T08:15:24.224Z"
+  }
+}
